@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300italic);
+
+body {
+	font-family: "Fira Sans", Helvetica, Arial;
+}
+
+.top, .navbar {
+	font-family: Oswald, Helvetica, Arial;
+	margin-bottom: 0;
+}
+
+.top {
+	margin-bottom: 1em;
+}
+
+.navbar {
+    background-color: transparent;
+    border-radius: none;
+    border: 0px;
+}
+
+#headlogo {
+	float: left;
+	margin-right: 1em;
+}
+
+li {
+	font-size: 20px;
+}
+
+li:hover {
+	background-color: #AEEEEE;
+	font-size: 25px;
+}
+
+.sub-menu {
+    display: none;
+    list-style-type: none;
+}
+
+.sub-menu a {
+	text-decoration: none;
+	text-align: left;
+}
+
+li:hover > .sub-menu {
+    display:block;
+}
+
+@media (min-width: 768px) {
+	.top h1 {
+		font-size: 60px;
+	}
+}
