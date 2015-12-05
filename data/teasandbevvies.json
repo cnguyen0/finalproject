@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Earl Grey",
+        "description": "For the connoisseur, we offer Earl Grey Supreme, which uses a higher grade of teas along with the addition of Silver Tips. Most of our customers have never gone back to our regular Earl Grey once they have tasted the Supreme. If you love Bergamot and fine tea, this is the blend for you.",
+        "price": 8,
+        "categories": ["Tea"]
+    },
+    {
+        "name": "Rooibos Chai Sachets",
+        "description": "Rooibos Chai brings together caffeine-free redbush herbal from South Africa with sweet Indian spices of clove, cardamom, and cinnamon. Savor Rooibos Chai in soothing soul-satisfying cups. The Indian spices impart a smooth, liberating earthy touch. Effusing a deliciously sweet aroma swirling in cinnamon, it is a cup of comfort that will have one welcoming seconds. 20 Wrapped Sachets. Each sachet brews 12oz cup. Brewing 4-5 minutes 212 degrees.",
+        "price": 9.6,
+        "categories": ["Tea"]
+    },
+    {
+        "name": "Cocoa Mix Premium Double Chocolate",
+        "description": "Perfect treat for a cold day out in the country, or snuggled in at home. Just mix and serve.  Also good added to your coffee for an instant mocha! 8oz resealable container. DIRECTIONS: Place 2-3 tbls in hot (not boiling) water, stir and enjoy. INGREDIENTS: Sugar, Whey, Nonfat dry milk, Cocoa powder (Dutch Process), Non dairy creamer (canola or coconut oil, corn syrup solids), Natural & artificial flavors, Guar gum, Salt.",
+        "price": 7.25,
+        "categories": ["Cocoa & Cider Mixes"]
+    }
+]

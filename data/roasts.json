@@ -1,0 +1,146 @@
+[
+    {
+        "name": "Ethiopian Harrar",
+        "description": "The Harrar bean is one of the most exotic coffees of the world. Harrar has the rich coffee taste finishing with hints chocolate and a distinctive fruitiness unlike any other bean.",
+        "price": 15,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Premium Varietals"]
+    },
+    {
+        "name": "Colombian",
+        "description": "The Colombian Coffee we offer is a medium roast with a sweet aroma and taste, with a hint of a chocolaty aftertaste. These are premium Colombian beans. Traditionally roasted for aroma and taste, not too dark. Always a good selection.",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Premium Varietals"]
+    },
+    {
+        "name": "Costa Rican Terrazu",
+        "description": "Truly a tasty roast, with rich and complex flavor. This country takes coffee production very seriously so quality is deemed excellent.  You will find this to be a bright full bodied coffee with dark chocolate notes.",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Premium Varietals"]
+    },
+    {
+        "name": "Ethiopian Yirgacheffe",
+        "description": "An exotic coffee from Ethiopia to excite your senses. Sweet notes, sugar, citrus and spicy with a silky body. This is an Organic Fair Trade coffee we think you will enjoy. Treat yourself to something truly wonderful!",
+        "price": 15,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Premium Varietals", "Organic"]
+    },
+    {
+        "name": "Honduran",
+        "description": "A full bodied coffee with notes of cocoa and butterscotch with a rounded acidity.  A very nice Fair Trade Organic coffee.  Rich enough for dessert.",
+        "price": 15,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Premium Varietals", "Organic"]
+    },
+    {
+        "name": "Kenyan",
+        "description": "Another fine African coffee. With hints of apricot, raisin, brown sugar, black tea, peach, coconut and a lively acidity you will find a silky, nectar-like body. Enjoy!",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Premium Varietals"]
+    },
+    {
+        "name": "Sumatra",
+        "description": "Sumatra produces coffee many consider to be among the worlds finest and most admired. This low acid, smooth medium roasted coffee is full bodied, with concentrated and complex tastes.",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Premium Varietals", "Organic"]
+    },
+    {
+        "name": "Terruno Nayarita",
+        "description": "We are pleased to offer this natural coffee from Mexico. This coffee has some characteristics of the Ethiopian Harrar we all love! Shade Grown and Certified Organic. Nearly all of the cooperative growers that produce these coffees are clustered around an extinct volcano, which imparts its special characteristics of soil type and micro climate to a bright, floral and citrusy coffee.",
+        "price": 14.5,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Premium Varietals", "Organic"]
+    },
+    {
+        "name": "Church Creek Blend",
+        "description": "Our Mocha Java Blend combines rich flavor and smooth but complex tastes with a smoky finish. A full bodied coffee.",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Blended"]
+    },
+    {
+        "name": "French Creek Espresso",
+        "description": "Our finest espresso roast with good creme' and complex flavor. This is a superb blend used by many of our espresso customers.",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Blended"]
+    },
+    {
+        "name": "Girlfriend Blend",
+        "description": "Our signature blend for the Tri Cities Women's Expo! Enjoy this full flavored blend with a hint of that dark roast taste in a smooth blend of South American and Indonesian beans. Have fun girls! PS, even the guys like it!",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Blended"]
+    },
+    {
+        "name": "Half-Caf",
+        "description": "For those who want a lower caffeine blend try our 50/50 mix. Choose any of our premium coffees and we will blend it with our Swiss Water Processed Decaf Blend. Outstanding!",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Blended", "Decaf"]
+    },
+    {
+        "name": "Holly Jolly Joe",
+        "description": "Enjoy our 2015 Holiday Blend! With the earthiness of Honduran, a bit of spice from Papua New Guinea and some boldness of Ethiopia, snuggle by the fire or enjoy with friends! Blended each year to be special. Typically available after Thanksgiving.",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Blended", "Organic", "Seasonal"]
+    },
+    {
+        "name": "Jordan Creek Blend",
+        "description": "This blend is a bit bolder than our Church Creek Blend. It is complex while still smooth in your cup, African for a bit of kick and South American to keep it creamy in your cup. This blend will hold up to your favorite espresso machine as well.",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Blended"]
+    },
+    {
+        "name": "Pilchuck Creek Blend",
+        "description": "Tantalizing blend of Indonesia, Papua New Guinea and African to produce a full bodied cup and smooth finish",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Blended"]
+    },
+    {
+        "name": "South Seas Blend",
+        "description": "Especially blended for the Tri Cities Woman's Expo Hawaiian theme several years ago! We blended Indonesian and Central American beans and found a very smooth and very flavorful coffee. The beans in this blend are all grown in volcanic soils that produce special characteristics. This blend is highly recommended to be enjoyed with friends!",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Blended"]
+    },
+    {
+        "name": "Wildcat Morning Kicker",
+        "description": "The kick you need in the morning! Blended especially for the '71 Wildcats' Reunion Weekend! Enjoy anytime!",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Blended"]
+    },
+    {
+        "name": "Decaf",
+        "description": "This is a superb blend of beans French roasted,resulting in a rich cup of coffee. These beans are decaffeinated using the Swiss Water Process!",
+        "price": 13,
+        "size": ["1lb", "5lb"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "categories": ["Decaf"]
+    }
+]

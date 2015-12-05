@@ -1,0 +1,8 @@
+[
+    {
+        "name": "Gift Certificates",
+        "description": "Gift certificates are available in multiples $10.00. This is the perfect gift! We can either mail it to you, your recipient or send by email.",
+        "amount": ["20", "30", "40", "50", "100"],
+        "categories": ["Gift Certificates", "Gifts"]
+    }
+]
