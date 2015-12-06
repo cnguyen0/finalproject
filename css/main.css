@@ -43,6 +43,19 @@ li:hover {
 	text-align: left;
 }
 
+#storeh1 {
+    font-family: cursive;
+}
+
+.col-xs-12, .col-sm-4 {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000;
+    margin: 4em;
+}
+
+/* Selectors below this and above media is for making the navbar NOT collapse
+    when screen is small */
 .navbar-collapse.collapse {
     display: block!important;
 }
@@ -87,5 +100,13 @@ li:hover {
 
     li:hover > .sub-menu {
         display:block;
+    }
+
+    #storeh1, #storep {
+        text-align: center;
+    }
+
+    #storeh1 {
+        font-size: 120px;
     }
 }
