@@ -5,13 +5,13 @@ body {
 	font-family: "Fira Sans", Helvetica, Arial;
 }
 
+body h1 {
+    font-size: 50px;
+}
+
 .top, .navbar {
 	font-family: Oswald, Helvetica, Arial;
 	margin-bottom: 0;
-}
-
-.top {
-	margin-bottom: 1em;
 }
 
 .navbar {
@@ -26,12 +26,11 @@ body {
 }
 
 li {
-	font-size: 20px;
+	font-size: 15px;
 }
 
 li:hover {
 	background-color: #AEEEEE;
-	font-size: 25px;
 }
 
 .sub-menu {
@@ -44,12 +43,49 @@ li:hover {
 	text-align: left;
 }
 
-li:hover > .sub-menu {
-    display:block;
+.navbar-collapse.collapse {
+    display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+    float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: -15px !important;
+}
+
+.navbar-right {
+    float: right!important;
 }
 
 @media (min-width: 768px) {
+    .top {
+        margin-bottom: 1em;
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/background.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 400px;
+    }
+
 	.top h1 {
-		font-size: 60px;
+		font-size: 75px;
+        padding-top: 3.5em;
+        text-align: right;
+        color: white;
 	}
+
+    li {
+        font-size: 20px;
+    }
+
+    li:hover {
+        background-color: #AEEEEE;
+        font-size: 25px;
+    }
+
+    li:hover > .sub-menu {
+        display:block;
+    }
 }
