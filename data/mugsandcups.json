@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Cold Cup",
+        "description": "Enjoy your favorite Blue Stilly chilled beverage in style with a 16oz double wall mug. Reuse your mug often and help keep paper out of the landfill. Choices are Blue with White Logo, or Clear with Blue Logo! Please indicate color when you order! Sales Tax included in price!",
+        "price": 11.95,
+        "color": ["clear", "blue"],
+        "categories": ["Servingware", "Gifts"]
+    },
+    {
+        "name": "Blue Stilly Coffee Mug",
+        "description": "Enjoy your coffee in your own matching Blue Stilly Coffee Mug! Our ceramic cup is approximately 8oz. Great as a gift! You can also combine with a pound of our fresh roasted coffee and make it really special!",
+        "price": 6,
+        "categories": ["Servingware", "Gifts"]
+    }
+]

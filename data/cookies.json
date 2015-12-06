@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Easter Cookies and Coffee",
+        "description": "Cookies without coffee?  Who can imagine that.  Order a pound of your favorite Blue Stilly Coffee and 4 of these cute cookies. Buttery, crispy and delightful. Share with someone special. Additional cookies available.",
+        "price": 23,
+        "categories": ["Cookies", "Seasonal"]
+    },
+    {
+        "name": "Seasonal Cookies",
+        "description": "In March, we are offering brightly decorated Easter Egg shaped cookies. These are frosted shortbread hand cut and decorated. Homemade by Darlene of Darlene's Baked Goods in Snohomish. Colors vary. She also does custom orders!",
+        "price": 2.5,
+        "categories": ["Cookies", "Seasonal"]
+    }
+]

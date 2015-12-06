@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Coffee Club Membership",
+        "description": "When you become a member of our Coffee Club family, you are assured of receiving the freshest coffee available delivered or shipped to your door. Set your own schedule for your delivery. You control the amount and type of coffee. You can choose your favorite coffee or allow the Roast Master to choose. You can change your preferences at any time. Save money and time",
+        "deliverySchedule": ["Once per month", "Twice per month", "Once every 6 weeks", "Every two months"],
+        "poundsPerDelivery": ["1lb - $12", "2lbs - $24", "3lbs - $36", "4lbs - $48"],
+        "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
+        "preferredCoffee": ["Recommended Rotation", "Costa Rican Terrazu", "Paupa New Guinea", "Sumatra", "Church Creek", "French Creek Espresso", "South Seas Blend", "Decaf", "Columbian Supremo", "Jordan Creek", "Kenyan", "Ethiopian Harrar - add $2", "Terruno Nayarita - add $2", "Ethiopian Yirgacheffe - add $2", "Honduran - add $2"],
+        "deliveryLocation": ["Front Door", "Back Door", "Other (enter instruction)"],
+        "categories": ["Membership", "Gifts"]
+    }
+]

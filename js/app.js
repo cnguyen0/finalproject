@@ -1,5 +1,5 @@
 $(function() {
-  'use strict'
+  'use strict';
 
   window.onscroll = changePos;
 
@@ -16,7 +16,7 @@ $(function() {
     } else {
         header.style.position = "";
         header.style.top = "";
-        nav.style.backgroundColor = "transparent"
+        nav.style.backgroundColor = "transparent";
         nav.style.borderRadius = "none";
         nav.style.border = "0px";
     }
