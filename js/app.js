@@ -5,20 +5,24 @@ $(function() {
 
   function changePos() {
     var header = document.getElementById("navbar");
-    var nav = document.querySelector("nav");
+    if (window.innerWidth > 768) {
+      var nav = document.querySelector("nav");
 
-    if (window.pageYOffset > 215) {
-        header.style.position = "absolute";
-        header.style.top = pageYOffset + "px";
-        header.style.width = "100%";
+      if (window.pageYOffset > 215) {
+        nav.style.position = "fixed";
+        nav.style.top = "0px";
+        nav.style.width = "100%";
+
         nav.style.backgroundColor = "#F1F1F1";
-        nav.style.borderRadius = "5px"
-    } else {
-        header.style.position = "";
-        header.style.top = "";
+        nav.style.borderRadius = "5px";
+      } else {
+        nav.style.position = "";
+        nav.style.top = "";
+
         nav.style.backgroundColor = "transparent";
         nav.style.borderRadius = "none";
         nav.style.border = "0px";
+      }
     }
   }
 });
