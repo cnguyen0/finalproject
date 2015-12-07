@@ -31,7 +31,7 @@ li {
 }
 
 li:hover {
-	background-color: #AEEEEE;
+	color: #01a1dd;
 }
 
 .sub-menu {
@@ -66,6 +66,24 @@ li:hover {
     float: right!important;
 }
 
+.product {
+    list-style-type: none;
+}
+#types{
+    list-style-type: none;
+    display: inline;
+    padding-left: 1.5em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+}
+#types li{
+    display: inline;
+}
+#types a {
+    text-decoration: none;
+}
+
 /*larger screens*/
 @media (min-width: 768px) {
     body {
@@ -93,7 +111,7 @@ li:hover {
     }
 
     li:hover {
-        background-color: #AEEEEE;
+        color: #01a1dd;
         font-size: 25px;
     }
 
