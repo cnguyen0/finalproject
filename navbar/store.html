@@ -19,15 +19,21 @@
 
     <!-- animsition.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.1/js/animsition.js"></script>
-    
+
+    <!-- angular.js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+    <!--loadash-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+
+    <!--ui routing-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
     <!-- link to javascript -->
     <script src="../js/app.js"></script>
+    <script src="../js/shop.js"></script>
 </head>
-<body class="animsition">
-    <div class="container top">
-        <h1>Blue Stilly Coffee</h1>
-        <!-- Can we get the blue stilly coffee to have some transition? -->
-    </div>
+<body ng-app="ProductsApp" ng-controller="ProductsController" class="animsition">
 
     <nav class="navbar navbar-default">
         <div class="container">
@@ -65,10 +71,29 @@
             </div>
         </div>
     </nav>
-    
-    <div class="container">
-        <h1 id="storeh1">Welcome!</h1>
-        <p id="storep">Please select what type of items you would like to look at today</p>
-    </div>
+
+    <main class="container">
+
+
+        <div class="row">
+            <ul id="types" ng-repeat="c in categories |orderBy: c">
+                <li><a href="#types" ng-click="filters.categories = c">{{c}}</a></li>
+            </ul>
+            <div id="coffeeType">
+
+            </div>
+            <div>
+                <div class="col-md-4"ng-repeat = "product in products |filter: filters |orderBy: 'name'">
+                    <p>{{product.name}}</p>
+                    <p>{{product.price}}</p>
+
+                    <button>ADD TO BAG</button>
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
 </body>
 </html>
