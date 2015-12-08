@@ -69,6 +69,7 @@ li:hover {
 .product {
     list-style-type: none;
 }
+
 #types{
     list-style-type: none;
     display: inline;
@@ -82,6 +83,33 @@ li:hover {
 }
 #types a {
     text-decoration: none;
+}
+
+footer {
+    font-size: 18px;
+    color: white;
+    background-color: #01a1dd;
+    padding: 1em;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
 }
 
 /*larger screens*/
