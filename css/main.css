@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300italic);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
 body {
 	font-family: "Fira Sans", Helvetica, Arial, serif;
@@ -77,12 +78,43 @@ li:hover {
     padding-bottom: 3em;
 
 }
-#types li{
-    display: inline;
-}
 #types a {
     text-decoration: none;
 }
+#types {
+    display: inline;
+}
+#types li {
+    display: inline;
+}
+
+.products-list {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 2em;
+
+}
+
+.text-hover {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.text-hover .overlay {
+    position:absolute;
+    top:80%;
+    width:200px;
+    height:20%;
+    background-color:rgba(0, 0, 0, 0.3);
+    display:none;
+    text-align: center;
+}
+.text-hover:hover .overlay {
+    display:block;
+    cursor:pointer;
+}
+
 
 /*larger screens*/
 @media (min-width: 768px) {
@@ -125,5 +157,9 @@ li:hover {
 
     #storeh1 {
         font-size: 120px;
+    }
+
+    #types li {
+        display: block;
     }
 }

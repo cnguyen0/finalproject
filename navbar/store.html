@@ -8,6 +8,7 @@
     <!--Bootstrap css, using integrity attr to ensure correct content was downloaded -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- link to css -->
     <link rel="stylesheet" href="../css/main.css">
 
@@ -73,22 +74,50 @@
     </nav>
 
     <main class="container">
+        <h2>Store</h2>
 
 
-        <div class="row">
-            <ul id="types" ng-repeat="c in categories |orderBy: c">
-                <li><a href="#types" ng-click="filters.categories = c">{{c}}</a></li>
-            </ul>
-            <div id="coffeeType">
+        <div class="row row-eq-height">
+            <div class="col-md-2 col-sm-2">
 
+                <ul id="types">
+                    <li>Shop By</li>
+                    <li ng-repeat="c in categories |orderBy: c">
+                        <a href="#types" ng-click="filters.categories = c">{{c}}</a>
+                    </li>
+                </ul>
             </div>
-            <div>
-                <div class="col-md-4"ng-repeat = "product in products |filter: filters |orderBy: 'name'">
+
+            <div class="col-md-10 col-sm-10">
+                <div class="col-sm-6 col-md-4 col-lg-3 products-list"ng-repeat = "product in products |filter: filters |orderBy: 'name'">
+                    <div class="text-hover">
+                        <img class="product-img" ng-src="{{product.photo}}"/>
+                        <div class="overlay">
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye"></i> Quick View</button>
+                        </div>
+                    </div>
+
                     <p>{{product.name}}</p>
-                    <p>{{product.price}}</p>
+                    <p>{{product.price | currency}}</p>
 
                     <button>ADD TO BAG</button>
-
+                </div>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
