@@ -1,4 +1,3 @@
-
 angular.module('ProductsApp', [])
     .factory('productsJSON', function($http) {
         return $http.get('../data/products.json')
