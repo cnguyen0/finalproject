@@ -114,6 +114,20 @@ img {
     margin-left:-200px;
 }
 
+.validation-error {
+    color: #DD0000;
+    font-size: 0.7em;
+}
+
+form .ng-dirty.ng-invalid {
+    border: 1px solid #DD0000;
+}
+
+form .ng-dirty.ng-valid {
+    border: 1px solid #00DD00;
+}
+
+
 /*larger screens*/
 @media (min-width: 768px) {
     body {

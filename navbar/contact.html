@@ -64,50 +64,71 @@
         </nav>
     <!-- END OF NAVBAR -->
 
-        <div class="container" id="contact"> 
+        <div class="container" id="contact" > 
             <h2>Contact Us</h2> 
             <p>Have any questions, comments, or concerns? Send us a message with your details
                 and a team member will get back to you shortly!</p>
-            <form name="contactForm" novalidate>
+            <form name="signupForm" ng-submit="confirm()" novalidate>
                 <div class="form-group">
-                    <div id="rating"></div>
+                    <input type="text" class="form-control" required ng-model="user.fname"
+                           placeholder="First Name" name="fname"/>
+                    <p class="validation-error requiredName"
+                       ng-if="signupForm.fname.$dirty && signupForm.fname.$error.required">
+                        First name is required
+                    </p>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="fname"
-                           placeholder="First Name" autofocus/>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="lname"
-                           placeholder="Last Name" autofocus/>
+                    <input type="text" class="form-control" required ng-model="user.lname"
+                           placeholder="Last Name" name="lname"/>
                     <p class="validation-error requiredName"
-                       ng-if="contactForm.lname.$dirty && signupForm.lname.$error.required">
-                        Last name is required.
+                       ng-if="signupForm.lname.$dirty && signupForm.lname.$error.required">
+                        Last name is required
                     </p>
                 </div>
                 <div class="form-group">
-                    <input type="tel" class="form-control"
-                           placeholder="Phone Number"/> <!--see regular expressions for javascript-->
-
+                    <input autofocus type="email" name="emailInp" id="emailInp" class="form-control"
+                           placeholder="Email Address" ng-model="user.email" required/>
+                    <p class="validation-error email-required-error"
+                       ng-if="signupForm.emailInp.$dirty && signupForm.emailInp.$error.required">
+                        Email address is required.
+                    </p>
+                    <p class="validation-error email-invalid-error"
+                       ng-if="signupForm.emailInp.$dirty && signupForm.emailInp.$error.email">
+                        Please enter a valid email address.
+                    </p>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="email"
-                           placeholder="Email" autofocus/>
+                    <input name="phoneInp" id="phoneInp" class="form-control"
+                           placeholder="Phone" ng-model="user.phone" required/>
+                    <p class="validation-error phone-required-error"
+                       ng-if="signupForm.phoneInp.$dirty && signupForm.phoneInp.$error.required">
+                        Phone number is required.
+                    </p>
                 </div>
                 <div class="form-group">
-                            <textarea class="form-control" rows=7 name="body"
-                                      placeholder="Write your message here!"></textarea>
+                    <textarea class="form-control" rows=7 name="msgInp" id="msgInp"
+                              placeholder="Write your message here!" required></textarea>
+                    <p class="validation-error msg-required-error"
+                       ng-if="signupForm.msgInp.$dirty && signupForm.msgInp.$error.required">
+                        Message input is required.
+                    </p>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <button type="reset" class="btn btn-default">Clear</button>
+                    <button type="submit" class="btn btn-primary"
+                            ng-disabled = "signupForm.$invalid">
+                        Sign Me Up
+                    </button>
+                    <button type="reset" class="btn btn-default" ng-click="reset()">Reset</button>
                 </div>
             </form>
         </div>
+
+        <!-- footer -->
         <footer>
-        <div class="container">
-        <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
-        </div>
-    </footer>
+                <div class="container">
+                    <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
+                </div>
+        </footer>
     </body>
 </html>
