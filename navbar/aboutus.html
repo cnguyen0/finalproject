@@ -17,37 +17,20 @@
     <!-- link to javascript -->
     <script src="../js/app.js"></script>
 </head>
-<body>
+<body ng-app="WebApp">
     <div class="container top">
         <h1>Blue Stilly Coffee</h1>
         <!-- Can we get the blue stilly coffee to have some transition? -->
     </div>
 
         <!-- NAVBAR -->
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" ng-controller="NavController">
             <div class="container">
                 <div>
                     <ul class="nav navbar-nav">
                         <li><a href="../index.html">Home</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="aboutus.html">About Us</a>
-                            <ul class="sub-menu">
-                                <li><a href="aboutus.html#about">About Us</a></li>
-                                <li><a href="aboutus.html#practices">Practices</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown">
-                            <a class="dropdown-toggle"
-                               href="store.html">Store</a>
-                            <ul class="sub-menu">
-                                <li><a href="store.html">Coffee</a></li>
-                                <li><a href="store.html">Tea</a></li>
-                                <li><a href="store.html">Accessories</a></li>
-                            </ul>
-                        </li>
-
-                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="aboutus.html">Our Story</a></li>
+                        <li><a href="store.html">Store</a></li>
                         <li><a href="news.html">News and Events</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
@@ -128,9 +111,10 @@
             bit more knowing it is helping the planet.
         </p>
     </div>
-    <div class="container" id="contact">
-        <h1>Contact us here!</h1>
-        <p>form coming soon.....</p>
-    </div>
+    <footer>
+        <div class="container">
+        <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
+        </div>
+    </footer>
 </body>
 </html>

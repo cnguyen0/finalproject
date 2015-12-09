@@ -29,32 +29,16 @@
     <script src="../js/app.js"></script>
     <script src="../js/shop.js"></script>
 </head>
+
 <body ng-app="ProductsApp" ng-controller="ProductsListCtrl">
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" ng-app="WebApp" ng-controller="NavController">
         <div class="container">
             <div>
-                <ul class="nav navbar-nav">
+               <ul class="nav navbar-nav">
                     <li><a href="../index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="aboutus.html">About Us</a>
-                        <ul class="sub-menu">
-                            <li><a href="aboutus.html#about">About Us</a></li>
-                            <li><a href="aboutus.html#practices">Practices</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle"
-                           href="store.html">Store</a>
-                        <ul class="sub-menu">
-                            <li><a href="store.html">Coffee</a></li>
-                            <li><a href="store.html">Tea</a></li>
-                            <li><a href="store.html">Accessories</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href="store.html">Store</a></li>
                     <li><a href="news.html">News and Events</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -159,5 +143,10 @@
 
 
     </main>
+    <footer>
+        <div class="container">
+        <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,9 +1,9 @@
-var app = angular.module('ProductsApp', ['ui.bootstrap']);
+angular.module('ProductsApp', ['ui.bootstrap'])
     app.factory('productsJSON', function($http) {
         return $http.get('../data/products.json')
-    });
+    })
 
-    app.controller('ProductsListCtrl', function($scope,productsJSON){
+    .controller('ProductsListCtrl', function($scope,productsJSON){
         'use strict';
 
         productsJSON.then(function (results) {
@@ -20,9 +20,9 @@ var app = angular.module('ProductsApp', ['ui.bootstrap']);
 
         });
 
-    });
+    })
 
-    app.controller('ProductDetailCtrl', function($scope, $filter, $uibModal, $log, productsJSON) {
+    .controller('ProductDetailCtrl', function($scope, $filter, $uibModal, $log, productsJSON) {
         $scope.closeAlert = function(){
             $scope.confirmation = !$scope.confirmation;
 
@@ -54,9 +54,9 @@ var app = angular.module('ProductsApp', ['ui.bootstrap']);
 
         };
 
-    });
+    })
 
-    app.controller('ModalInstanceCtrl', function($scope, $uibModalInstance, product) {
+    .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, product) {
         $scope.product = product;
         $scope.product.quantity = '1';
         $scope.close = function () {
@@ -69,7 +69,11 @@ var app = angular.module('ProductsApp', ['ui.bootstrap']);
         }
 
 
-    });
+    })
+
+
+
+
 
 
 
