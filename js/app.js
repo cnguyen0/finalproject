@@ -4,7 +4,7 @@ angular.module('WebApp', ['ui.bootstrap'])
     })
 
     .factory('usersJSON', function($http) {
-        return $http.get('data/userInformation.json');
+        return $http.get('../data/userInformation.json');
     })
 
     .controller('ProductsListCtrl', function($scope,productsJSON){

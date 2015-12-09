@@ -121,8 +121,13 @@ li:hover {
 
 .detail-img {
     float:left;
+    width: 200px;
+    height: 200px;
 }
-
+.product-img {
+    width: 200px;
+    height: 200px;
+}
 .product-detail {
     font-size: 14px;
 }
