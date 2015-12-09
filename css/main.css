@@ -2,7 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300italic);
 
 body {
-	font-family: "Fira Sans", Helvetica, Arial;
+	font-family: "Fira Sans", Helvetica, Arial, serif;
+    font-size: 18px;
 }
 
 body h1 {
@@ -10,14 +11,14 @@ body h1 {
 }
 
 .top, .navbar {
-	font-family: Oswald, Helvetica, Arial;
+	font-family: Oswald, Helvetica, Arial, serif;
 	margin-bottom: 0;
 }
 
 .navbar {
     background-color: transparent;
     border-radius: none;
-    border: 0px;
+    border: 0;
 }
 
 #headlogo {
@@ -30,7 +31,7 @@ li {
 }
 
 li:hover {
-	background-color: #AEEEEE;
+	color: #01a1dd;
 }
 
 .sub-menu {
@@ -65,12 +66,79 @@ li:hover {
     float: right!important;
 }
 
+.product {
+    list-style-type: none;
+}
+
+#types{
+    list-style-type: none;
+    display: inline;
+    padding-left: 1.5em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+}
+#types li{
+    display: inline;
+}
+#types a {
+    text-decoration: none;
+}
+
+footer {
+    font-size: 18px;
+    color: white;
+    background-color: #01a1dd;
+    padding: 1em;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+#slides_control > div {
+    height: 200px;
+}
+
+img {
+    margin:auto;
+    width: 400px;
+}
+
+#slides_control {
+    position:absolute;
+    width: 400px;
+    left:50%;
+    top:20px;
+    margin-left:-200px;
+}
+
+.validation-error {
+    color: #DD0000;
+    font-size: 0.7em;
+}
+
+form .ng-dirty.ng-invalid {
+    border: 1px solid #DD0000;
+}
+
+form .ng-dirty.ng-valid {
+    border: 1px solid #00DD00;
+}
+
+
+/*larger screens*/
 @media (min-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+
     .top {
         margin-bottom: 1em;
-        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/background.jpg);
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/backgroundsmall.jpg);
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: cover;
         width: 100%;
         height: 400px;
     }
@@ -87,7 +155,7 @@ li:hover {
     }
 
     li:hover {
-        background-color: #AEEEEE;
+        color: #01a1dd;
         font-size: 25px;
     }
 
@@ -101,5 +169,17 @@ li:hover {
 
     #storeh1 {
         font-size: 120px;
+    }
+}
+
+@media(min-width: 992px) {
+    .top {
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/background.jpg);
+    }
+}
+
+@media(min-width: 1200px) {
+    .top {
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/backgroundbig.jpg);
     }
 }

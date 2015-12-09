@@ -1,15 +1,4 @@
-//  Total list of categories:
-//        Premium Varietals
-//        Blended
-//        Organic
-//        Decaf
-//        Tea
-//        Beverage
-//        Cookies
-//        Seasonal
-//        Equipment
-//        Servingware
-//        Gifts
+
 
 [
     {
@@ -18,7 +7,8 @@
         "price": 15,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Premium Varietals"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Premium Varietals"]
     },
     {
         "name": "Colombian",
@@ -26,7 +16,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Premium Varietals"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Premium Varietals"]
     },
     {
         "name": "Costa Rican Terrazu",
@@ -34,7 +25,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Premium Varietals"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Premium Varietals"]
     },
     {
         "name": "Ethiopian Yirgacheffe",
@@ -42,7 +34,8 @@
         "price": 15,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Premium Varietals", "Organic"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Premium Varietals", "Organic"]
     },
     {
         "name": "Honduran",
@@ -50,7 +43,8 @@
         "price": 15,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Premium Varietals", "Organic"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Premium Varietals", "Organic"]
     },
     {
         "name": "Kenyan",
@@ -58,7 +52,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Premium Varietals"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Premium Varietals"]
     },
     {
         "name": "Sumatra",
@@ -66,7 +61,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Premium Varietals", "Organic"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Premium Varietals", "Organic"]
     },
     {
         "name": "Terruno Nayarita",
@@ -74,7 +70,8 @@
         "price": 14.5,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Premium Varietals", "Organic"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Premium Varietals", "Organic"]
     },
     {
         "name": "Church Creek Blend",
@@ -82,7 +79,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Blended"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Blended"]
     },
     {
         "name": "French Creek Espresso",
@@ -90,7 +88,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Blended"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Blended"]
     },
     {
         "name": "Girlfriend Blend",
@@ -98,15 +97,17 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Blended"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Blended"]
     },
     {
         "name": "Half-Caf",
-        "description": "For those who want a lower caffeine blend try our 50/50 mix. Choose any of our premium coffees and we will blend it with our Swiss Water Processed Decaf Blend. Outstanding!",
+        "description": "For those who want a lower caffeine blend try our 50 and 50 mix. Choose any of our premium coffes and we will blend it with our Swiss Water Processed Decaf Blend. Outstanding!",
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Blended", "Decaf"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Blended", "Decaf"]
     },
     {
         "name": "Holly Jolly Joe",
@@ -114,7 +115,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Blended", "Organic", "Seasonal"]
+        "categories": ["Coffee", "Seasonal"],
+        "coffeeType": ["Blended", "Organic"]
     },
     {
         "name": "Jordan Creek Blend",
@@ -122,7 +124,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Blended"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Blended"]
     },
     {
         "name": "Pilchuck Creek Blend",
@@ -130,7 +133,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Blended"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Blended"]
     },
     {
         "name": "South Seas Blend",
@@ -138,7 +142,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Blended"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Blended"]
     },
     {
         "name": "Wildcat Morning Kicker",
@@ -146,7 +151,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Blended"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Blended"]
     },
     {
         "name": "Decaf",
@@ -154,7 +160,8 @@
         "price": 13,
         "size": ["1lb", "5lb"],
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
-        "categories": ["Decaf"]
+        "categories": ["Coffee"],
+        "coffeeType": ["Blended", "Decaf"]
     },
     {
         "name": "Earl Grey",
@@ -170,7 +177,7 @@
     },
     {
         "name": "Cocoa Mix Premium Double Chocolate",
-        "description": "Perfect treat for a cold day out in the country, or snuggled in at home. Just mix and serve.  Also good added to your coffee for an instant mocha! 8oz resealable container. DIRECTIONS: Place 2-3 tbls in hot (not boiling) water, stir and enjoy. INGREDIENTS: Sugar, Whey, Nonfat dry milk, Cocoa powder (Dutch Process), Non dairy creamer (canola or coconut oil, corn syrup solids), Natural & artificial flavors, Guar gum, Salt.",
+        "description": "Perfect treat for a cold day out in the country, or snuggled in at home. Just mix and serve. Also good added to your coffee for an instant mocha! 8oz resealable container. DIRECTIONS: Place 2-3 tbls in hot (not boiling) water, stir and enjoy. INGREDIENTS: Sugar, Whey, Nonfat dry milk, Cocoa powder (Dutch Process), Non dairy creamer (canola or coconut oil, corn syrup solids), Natural & artificial flavors, Guar gum, Salt.",
         "price": 7.25,
         "categories": ["Beverage"]
     },
@@ -179,13 +186,13 @@
         "description": "Enjoy your favorite Blue Stilly chilled beverage in style with a 16oz double wall mug. Reuse your mug often and help keep paper out of the landfill. Choices are Blue with White Logo, or Clear with Blue Logo! Please indicate color when you order! Sales Tax included in price!",
         "price": 11.95,
         "color": ["clear", "blue"],
-        "categories": ["Servingware", "Gifts"]
+        "categories": ["Gifts"]
     },
     {
         "name": "Blue Stilly Coffee Mug",
         "description": "Enjoy your coffee in your own matching Blue Stilly Coffee Mug! Our ceramic cup is approximately 8oz. Great as a gift! You can also combine with a pound of our fresh roasted coffee and make it really special!",
         "price": 6,
-        "categories": ["Servingware", "Gifts"]
+        "categories": ["Gifts"]
     },
     {
         "name": "AeroPress Portable Coffee Maker",
