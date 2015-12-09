@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blue Stilly</title>
+    <link rel="icon" href="../img/icon.png"/>
 
     <!--Bootstrap css, using integrity attr to ensure correct content was downloaded -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- link to css -->
     <link rel="stylesheet" href="../css/main.css">
 
+
     <!-- angular.js-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
 
     <!--loadash-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
@@ -24,7 +29,8 @@
     <script src="../js/app.js"></script>
     <script src="../js/shop.js"></script>
 </head>
-<body>
+
+<body ng-app="ProductsApp" ng-controller="ProductsListCtrl">
 
     <nav class="navbar navbar-default" ng-app="WebApp" ng-controller="NavController">
         <div class="container">
@@ -46,24 +52,92 @@
         </div>
     </nav>
 
-    <main class="container" ng-app="ProductsApp" ng-controller="ProductsController">
+    <main class="container" ng-controller="ProductDetailCtrl">
+        <h2>Store</h2>
+        <div class="alert alert-success fade in" ng-if="confirmation">
+            <a href="#" class="close" ng-click = 'closeAlert()'>&times;</a>
+            <p>{{selectedProduct.name}} is added to your cart!</p>
+        </div>
 
+        <div class="row row-eq-height">
+            <div class="col-md-2 col-sm-2">
 
-        <div class="row">
-            <ul id="types" ng-repeat="c in categories |orderBy: c">
-                <li><a href="#types" ng-click="filters.categories = c">{{c}}</a></li>
-            </ul>
-            <div id="coffeeType">
-
+                <ul class="types">
+                    <li>Shop By</li>
+                    <li ng-repeat="c in categories |orderBy: c">
+                        <a href="#types" ng-click="filters.categories = c">{{c}}</a>
+                    </li>
+                </ul>
+                <ul class="types">
+                    <li>Coffee Sort By</li>
+                    <li ng-repeat = "type in coffeeTypes |orderBy: type">
+                        <a href="#types"ng-click="filterCoffee.coffeeTypes = type">{{type}}</a>
+                        
+                    </li>
+                </ul>
             </div>
-            <div>
-                <div class="col-md-4"ng-repeat = "product in products |filter: filters |orderBy: 'name'">
-                    <p>{{product.name}}</p>
-                    <p>{{product.price}}</p>
 
-                    <button>ADD TO BAG</button>
+            <div class="col-md-10 col-sm-10">
+                <script type="text/ng-template" id="product-detail.html">
+                <div class="row modal-body product-detail">
+
+                    <div class="col-md-5 col-lg-5">
+                        <img class="detail-img" ng-src="{{product.photo}}"/>
+
+                    </div>
+                    <div class="col-md-7 col-lg-7">
+                        <span id="close-window" ng-click="close()"><i class="fa fa-times"></i></span>
+                        <h3>{{product.name}}</h3>
+                        <h3>{{product.price | currency}}</h3>
+                        <div>
+                            <div class="selectBox">
+                                <p>Quantity</p>
+                                <select ng-model='product.quantity' class="form-control">
+                                    <option selected value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div class="selectBox" ng-if='product.grind'>
+                            <p>Grind</p>
+                                <select class="form-control">
+                                    <option ng-repeat="g in product.grind" value="{{g}}">{{g}}</option>
+                                </select>
+                            </div>
+                            <div >
+                                <button class="btn btn-info" ng-click="submit()"> ADD TO CART</button>
+                            </div>
+                            <div>
+                                <hr/>
+                                <p>PRODUCT INFO</p>
+                                <p>{{product.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
+                </script>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 products-list"ng-repeat = "product in products |filter: filters |filter: filterCoffee |orderBy: 'name'">
+                    <div class="text-hover">
+                        <img class="product-img" ng-src="{{product.photo}}"/>
+                        <div class="overlay">
+                            <span ng-click="open(product)"><i class="fa fa-eye"></i> QUICK VIEW</span>
+                        </div>
+                    </div>
+
+                    <p>{{product.name}}</p>
+                    <p>{{product.price | currency}}</p>
+                </div>
+
             </div>
         </div>
 
