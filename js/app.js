@@ -51,4 +51,3 @@ angular.module('WebApp', [])
             }
         }
     });
-
