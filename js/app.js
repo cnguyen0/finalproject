@@ -9,6 +9,7 @@ angular.module('WebApp', [])
             $scope.users = info.data;
         });
 
+        $scope.chosenUser = {};
 
         window.onscroll = changePos;
 
@@ -43,10 +44,22 @@ angular.module('WebApp', [])
             require: 'ngModel',
             link: function(scope, elem, attrs, controller) {
                 controller.$validators.existUser = function(value) {
-                    $scope.users.forEach(function(user) {
+                    scope.users.forEach(function(user) {
+                        scope.chosenUser = user;
                         return (value === user.email);
                     });
                     return false;
+                }
+            }
+        }
+    })
+
+    .directive('validPassword', function() {
+        return {
+            require:'ngModel',
+            link: function(scope, elem, attrs, controller) {
+                controller.$validators.validPassword = function(value) {
+                    return (value === scope.chosenUser.password);
                 }
             }
         }
