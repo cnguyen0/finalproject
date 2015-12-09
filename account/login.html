@@ -43,10 +43,49 @@
         </div>
     </nav>
 
-    <footer>
-        <div class="container">
-        <p><a href="../navbar/aboutus.html">About Us</a> | <a href="../navbar/contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
+    <main>
+        <div class = "container-fluid">
+            <form name="logIn" ng-submit="submit()" novalidate>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input autofocus type="email" id="email" class="form-control" required
+                           placeholder="Email Address" ng-model="user.email" exist-user>
+                    <p class="validation-error"
+                       ng-if="logIn.email.$dirty && signUp.email.$error.required">
+                        Email address is required
+                    </p>
+                    <p class="validation-error"
+                       ng-if="logIn.email.$dirty && signUp.email.$error.email">
+                        Please enter a valid email address
+                    </p>
+                    <p class="validation-error"
+                       ng-if="logIn.email.$dirty && logIn.email.$error.existUser">
+                        Email address doesn't exist.
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" required
+                           ng-model="user.password" valid-password/>
+                    <p class="validation-error"
+                       ng-if="logIn.password.$dirty && logIn.password.$error.required">
+                        Password is required.
+                    </p>
+                    <p class="validation-error"
+                       ng-if="logIn.password.$error.validPassword">
+                        Invalid account or Password.
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"
+                            ng-disabled="logIn.$invalid" >
+                        Log in
+                    </button>
+                </div>
+            </form>
         </div>
-    </footer>
+    </main>
 </body>
 </html>
