@@ -1,7 +1,16 @@
 angular.module('WebApp', [])
-	.controller('NavController', function($scope, $http) {
+
+    .factory('usersJSON', function($http) {
+        return $http.get('data/userInformation.json');
+    })
+    .controller('NavController', function($scope, $http, usersJSON) {
 		'use strict';
-		window.onscroll = changePos;
+        usersJSON.then(function(info) {
+            $scope.users = info.data;
+        });
+
+
+        window.onscroll = changePos;
 
 		function changePos() {
 		    var header = document.getElementById("navbar");
@@ -27,25 +36,19 @@ angular.module('WebApp', [])
       			}
     		}
     	}
-	});
+	})
 
-	/*
-	.controller('SlideController', function($scope, $http) {
-		function CarouselDemoCtrl($scope){
-			$scope.myInterval = 3000;
-			$scope.slides = [
-				{
-				  image: 'http://lorempixel.com/400/200/'
-				},
-				{
-				  image: 'http://lorempixel.com/400/200/food'
-				},
-				{
-				  image: 'http://lorempixel.com/400/200/sports'
-				},
-				{
-				  image: 'http://lorempixel.com/400/200/people'
-				}
-			];
-		}
-	});*/
+    .directive('existUser', function() {
+        return {
+            require: 'ngModel',
+            link: function(scope, elem, attrs, controller) {
+                controller.$validators.existUser = function(value) {
+                    $scope.users.forEach(function(user) {
+                        return (value === user.email);
+                    });
+                    return false;
+                }
+            }
+        }
+    });
+
