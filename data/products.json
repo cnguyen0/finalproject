@@ -39,7 +39,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Premium Varietals", "Organic"],
-        "photo":"../img/ethiopianyirgacheffee.jpg"
+        "photo":"../img/ethiopianyirgacheffe.jpg"
     },
     {
         "name": "Honduran",
@@ -159,7 +159,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended"],
-        "photo":"../img/southseasblend.jpg"
+        "photo":"../img/southseasblend.png"
     },
     {
         "name": "Wildcat Morning Kicker",

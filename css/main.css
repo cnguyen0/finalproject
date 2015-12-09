@@ -42,6 +42,7 @@ li:hover {
     background-color: transparent;
     border-radius: none;
     border: 0px;
+    z-index: 1;
 }
 
 .navbar-right li {
@@ -120,8 +121,13 @@ li:hover {
 
 .detail-img {
     float:left;
+    width: 200px;
+    height: 200px;
 }
-
+.product-img {
+    width: 200px;
+    height: 200px;
+}
 .product-detail {
     font-size: 14px;
 }
