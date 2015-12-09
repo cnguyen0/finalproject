@@ -13,6 +13,7 @@
 
     <!-- angular script file -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
 
     <!-- ui bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.js"></script>
@@ -30,25 +31,8 @@
 			<div>
 				<ul class="nav navbar-nav">
 					<li><a href="index.html">Home</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" href="navbar/aboutus.html">About Us</a>
-						<ul class="sub-menu">
-							<li><a href="navbar/aboutus.html#about">About Us</a></li>
-							<li><a href="navbar/aboutus.html#practices">Practices</a></li>
-						</ul>
-					</li>
-
-					<li class="dropdown">
-						<a class="dropdown-toggle"
-						   href="navbar/store.html">Store</a>
-						<ul class="sub-menu">
-							<li><a href="navbar/store.html">Coffee</a></li>
-							<li><a href="navbar/store.html">Tea</a></li>
-							<li><a href="navbar/store.html">Accessories</a></li>
-						</ul>
-					</li>
-
-					<li><a href="navbar/faq.html">FAQ</a></li>
+					<li><a href="navbar/aboutus.html">Our Story</a></li>
+					<li><a href="navbar/store.html">Store</a></li>
 					<li><a href="navbar/news.html">News and Events</a></li>
 					<li><a href="navbar/contact.html">Contact Us</a></li>
 				</ul>
@@ -63,9 +47,10 @@
 	</nav>
 
 	<div class="container">
-		<h1 class="test">
+		<h1>
 			Welcome to Blue Stilly Coffee!
 		</h1>
+        
         <h2>Who Are We?</h2>
         <p>
             One day, because of our love for coffee,we decided to learn as much as we could. We had already tried many different varieties and ordered from many roasters. We decided to visit some of the local roasters and discovered we loved the drum roasted coffee over the 'air' roasted. Drum roasted had more depth and flavor. We began to mail order coffee in bulk from our favorite roaster for ourselves, friends and family. It was time to strike out on our own. We purchased a Diedrich drum style roaster. It was a small-batch coffee shop model in brass, metallic green and black. After training with the old owner of the roaster, we incorporated and started business. Next we attended a training program at the Diedrich factory to hone our skills. It has worked out well for us, as we are HUGE consumers ourselves! We will generally roast your selection medium/dark, however, feel free to request your personal preference when you order!
@@ -82,20 +67,8 @@
         <p>
             Rick and Sue
         </p>
+    </div>
 
-        <div class="container" ng-app="SlideController">
-			<div>
-				<carousel interval="myInterval">
-					<slide ng-repeat="slide in slides" active="slide.active">
-						<img ng-src="{{slide.image}}">
-						<div class="carousel-caption">
-							<h4>Slide {{$index+1}}</h4>
-						</div>
-					</slide>
-				</carousel>
-			</div>
-        </div>
-	</div>
 	<footer>
 		<div class="container">
 		<p><a href="navbar/aboutus.html">About Us</a> | <a href="navbar/contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
