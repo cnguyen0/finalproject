@@ -6,6 +6,15 @@ body {
     font-size: 18px;
 }
 
+/* might delete later don't worry about it ask cee
+
+.main {
+    background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/coffee_main.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 1000px;
+}*/
+
 body h1 {
     font-size: 50px;
 }
@@ -13,12 +22,6 @@ body h1 {
 .top, .navbar {
 	font-family: Oswald, Helvetica, Arial, serif;
 	margin-bottom: 0;
-}
-
-.navbar {
-    background-color: transparent;
-    border-radius: none;
-    border: 0px;
 }
 
 #headlogo {
@@ -34,14 +37,14 @@ li:hover {
 	color: #01a1dd;
 }
 
-.sub-menu {
-    display: none;
-    list-style-type: none;
+.navbar {
+    background-color: transparent;
+    border-radius: none;
+    border: 0px;
 }
 
-.sub-menu a {
-	text-decoration: none;
-	text-align: left;
+.navbar-right li {
+    font-size: 16px;
 }
 
 #storeh1 {
@@ -90,26 +93,12 @@ footer {
     color: white;
     background-color: #01a1dd;
     padding: 1em;
+    width: 100%;
 }
 
 footer a {
     text-decoration: none;
     color: white;
-}
-
-#slides_control > div{
-  height: 200px;
-}
-img{
-  margin:auto;
-  width: 400px;
-}
-#slides_control {
-  position:absolute;
-  width: 400px;
-  left:50%;
-  top:20px;
- margin-left:-200px;
 }
 
 /*larger screens*/
