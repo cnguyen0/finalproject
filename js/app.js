@@ -15,7 +15,7 @@ angular.module('WebApp', [])
 
 		function changePos() {
 		    var header = document.getElementById("navbar");
-		    if (window.innerWidth > 768) {
+		    if (window.innerWidth > 768 && window.innerHeight > 803) {
 		    	var nav = document.querySelector("nav");
 
 		    	if (window.pageYOffset > 400) {
