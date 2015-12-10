@@ -432,4 +432,8 @@ footer a:hover,a:focus {
     .navbar li {
         padding-right: 1.5em;
     }
+
+    .enterText h1 {
+        font-size: 5em;
+    }
 }
