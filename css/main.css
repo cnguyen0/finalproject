@@ -1,93 +1,108 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300italic);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 
 body {
 	font-family: "Fira Sans", Helvetica, Arial, serif;
-    font-size: 18px;
+    font-size: 15px;
+    padding-top: 60px;
 }
 
 body h1 {
     font-size: 50px;
 }
-
-.top, .navbar {
-	font-family: Oswald, Helvetica, Arial, serif;
-	margin-bottom: 0;
+body {
+    padding-top: 0;
 }
+
 
 #headlogo {
 	float: left;
 	margin-right: 1em;
 }
 
-li {
-	font-size: 15px;
-}
-
-li:hover {
+li a:hover {
 	color: #01a1dd;
 }
 
 .navbar {
-    background-color: transparent;
-    border-radius: none;
-    border: 0px;
-    z-index: 1;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-.navbar-right li {
-    font-size: 16px;
+.navbar-right li a {
+    font-size: 13px;
 }
 
 #storeh1 {
     font-family: cursive;
 }
 
-/* Selectors below this and above media is for making the navbar NOT collapse
-    when screen is small */
-.navbar-collapse.collapse {
-    display: block!important;
+.navbar-default {
+    background-color: #FFF;
+    border-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #01a1dd;
+}
+.navbar-default .navbar-toggle {
+    border-color: #01a1dd;
 }
 
-.navbar-nav>li, .navbar-nav {
-    float: left !important;
+.navbar-default .navbar-brand {
+    color: #000;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #01a1dd;
 }
 
-.navbar-nav.navbar-right:last-child {
-    margin-right: -15px !important;
-}
-
-.navbar-right {
-    float: right!important;
+.btn-primary {
+    background-color: #01a1dd;
 }
 
 .product {
     list-style-type: none;
 
 }
-#types{
-    list-style-type: none;
 
-    padding-left: 1.5em;
-    padding-top: 3em;
-    padding-bottom: 3em;
+.types{
+    list-style-type: none;
+    display: inline;
+    padding-left: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 16px;
+    text-align: center;
 
 }
 .types a {
     text-decoration: none;
+    color: #777;
 }
 
 .types li {
     display: inline;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
 }
 
 .products-list {
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 2em;
+}
 
+.product-name {
+    color: #01a1dd;
+    font-size: 16px;
+    margin-bottom: 0;
 }
 
 .text-hover {
@@ -115,14 +130,27 @@ li:hover {
     float:left;
     width: 200px;
     height: 200px;
+    border-radius: 5px;
 }
 .product-img {
     width: 200px;
     height: 200px;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
 }
 .product-detail {
     font-size: 14px;
 }
+
+.product-detail-hr {
+    width: 100%;
+}
+.product-detail .form-control {
+    width: auto;
+    margin-bottom: 1em;
+}
+
+
 
 #close-window {
     float:right;
@@ -147,17 +175,44 @@ form .ng-dirty.ng-valid {
     border: 1px solid #00DD00;
 }
 
+.formLabel {
+    font-size: 14px;
+    color: #777;
+}
+hr {
+    border-color: #01a1dd;
+    width: 5%;
+}
+
+.subtitle {
+    padding-bottom: 2em;
+    font-size: 16px;
+    color: #777;
+    text-align: center;
+}
+
+
 footer {
-    font-size: 18px;
-    color: white;
-    background-color: #01a1dd;
-    padding: 1em;
+    font-size: 15px;
+    color: #777;
+    padding: 0.5em;
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+}
+
+footer hr{
+    border-color: #01a1dd;
     width: 100%;
 }
 
 footer a {
     text-decoration: none;
-    color: white;
+    color: #777;
+}
+footer a:hover,a:focus {
+    text-decoration: none;
+    color: #01a1dd;
 }
 /*larger screens*/
 @media (min-width: 768px) {
@@ -180,16 +235,19 @@ footer a {
         text-align: right;
         color: white;
 	}
+    /*
 
-    li {
-        font-size: 20px;
+    .nav li {
+        font-size: 15px;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
-    li:hover {
+    .nav li:hover {
         color: #01a1dd;
         font-size: 25px;
     }
-
+*/
     li:hover > .sub-menu {
         display:block;
     }
@@ -267,6 +325,7 @@ footer a {
     .ng-enter.ng-enter-active {
         opacity: 1;
     }
+
 }
 
 @media(min-width: 992px) {

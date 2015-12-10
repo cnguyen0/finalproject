@@ -10,6 +10,7 @@
 
     <!-- link to css -->
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="../img/icon.png"/>
 
     <!-- angular script file -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
@@ -21,38 +22,50 @@
 </head>
 
 <body ng-app="WebApp">
-    <div class="container top">
-        <h1>Blue Stilly Coffee</h1>
-        <!-- Can we get the blue stilly coffee to have some transition? -->
-    </div>
-
-    <nav class="navbar navbar-default" ng-controller="NavController">
-        <div class="container">
-            <div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html" class="active">Blue Stilly</a>
+            </div>
+            <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
                 <ul class="nav navbar-nav">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../navbar/aboutus.html">Our Story</a></li>
-                    <li><a href="../navbar/store.html">Store</a></li>
-                    <li><a href="../navbar/news.html">News and Events</a></li>
-                    <li><a href="../navbar/contact.html">Contact Us</a></li>
+                    <li><a href="../navbar/aboutus.html">OUR STORY</a></li>
+                    <li><a href="../navbar/store.html">STORE</a></li>
+                    <li><a href="../navbar/news.html">NEWS</a></li>
+                    <li><a href="../navbar/contact.html">CONTACT US</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+                    <li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="container top"></div>
 
-    <main>
-        <div class = "container-fluid">
-            <form name="signUp" ng-submit="submit()" novalidate>
+    <main class = "container-fluid" >
+        <div class="row">
+            <h3 class="text-center">Sign Up</h3>
+            <hr/>
+            <p class="subtitle">Sign Up Today!</p>
+            <form class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" name="signUp" ng-submit="submit()" novalidate>
                 <div class="form-group">
-                    <label for="fname">First name</label>
-                    <input type="text" id = "fname" class="form-control"
-                           placeholder="Your first name" ng-model="user.fname"/>
+                    <label class="formLabel" for="fname">First name</label>
+                    <input autofocus type="text" id = "fname" class="form-control"
+                            ng-model="user.fname"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="lname">Last name</label>
+                    <label class="formLabel" for="lname">Last name</label>
                     <input type="text" id="lname" class="form-control" required
-                           placeholder="Your last name" pattern="[a-zA-Z-]+" ng-model="user.lname"/>
+                           pattern="[a-zA-Z-]+" ng-model="user.lname"/>
                     <p class="validation-error"
                        ng-if="signUp.lname.$dirty && signUp.lname.$error.required">
                         Last name is required
@@ -64,9 +77,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input autofocus type="email" id="email" class="form-control" required
-                           placeholder="Email Address" ng-model="user.email">
+                    <label class="formLabel" for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required
+                            ng-model="user.email">
                     <p class="validation-error"
                        ng-if="signUp.email.$dirty && signUp.email.$error.required">
                         Email address is required
@@ -78,7 +91,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Create Password</label>
+                    <label class="formLabel" for="password">Create Password</label>
                     <input type="password" id="password" class="form-control" required
                            ng-model="user.password"/>
                     <p class="validation-error"
@@ -88,7 +101,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary"
+                    <button type="submit" class="btn btn-primary col-md-12"
                             ng-disabled = "signUp.$invalid">
                         Create An Account
                     </button>
@@ -96,5 +109,12 @@
             </form>
         </div>
     </main>
+    <footer>
+        <hr/>
+        <div class="container">
+            <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+            <p>&copy; 2014 <strong>Blue Stilly</strong> Coffee. All Rights Reserved</p>
+        </div>
+    </footer>
 </body>
 </html>

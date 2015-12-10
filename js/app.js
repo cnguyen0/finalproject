@@ -31,11 +31,9 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
 
 
             $scope.categories = _.uniq(_.flatten(_.pluck($scope.products, 'categories')));
-            $scope.coffeeTypes = _.uniq(_.flatten(_.pluck($scope.products, 'coffeeType')));
 
             $scope.filters = {};
-            $scope.filterCoffee = {};
-            console.log($scope.filterCoffee);
+
 
 
         });
