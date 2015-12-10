@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
-@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300italic);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 
@@ -7,6 +7,7 @@ body {
 	font-family: "Fira Sans", Helvetica, Arial, serif;
     font-size: 15px;
     padding-top: 60px;
+    font-weight: 300;
 }
 
 .main {
@@ -25,7 +26,7 @@ body {
 
 
 h4 {
-    color:#D87E28;
+    color:#01a1dd;
     text-align: right;
     padding-right: 10px;
 }
@@ -45,12 +46,7 @@ li a:hover {
 
 .navbar {
     font-size: 15px;
-    font-weight: bold;
     margin-bottom: 0;
-}
-
-.navbar-right li a {
-    font-size: 13px;
 }
 
 #storeh1 {
@@ -92,13 +88,17 @@ li a:hover {
 .types{
     list-style-type: none;
     display: inline;
-    padding-left: 2em;
-    padding-top: 2em;
     padding-bottom: 2em;
     font-size: 16px;
     text-align: center;
 
 }
+
+.types ul {
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
 .types a {
     text-decoration: none;
     color: #777;
@@ -106,15 +106,17 @@ li a:hover {
 
 .types li {
     display: inline;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-right: 0.2em;
 
 }
 
 .products-list {
     font-size: 14px;
-    font-weight: 400;
     margin-bottom: 2em;
+}
+
+.products-list .item {
+    text-align: center;
 }
 
 .product-name {
@@ -158,7 +160,9 @@ li a:hover {
 }
 .product-detail {
     font-size: 14px;
+    font-weight: 300;
 }
+
 
 .product-detail-hr {
     width: 100%;
@@ -168,10 +172,14 @@ li a:hover {
     margin-bottom: 1em;
 }
 
+#table td, #table th {
+    padding-bottom: 0.3em;
+}
+
 #close-window {
     float:right;
     cursor:pointer;
-    font-weight: bold;
+
 }
 
 #close-window:hover {
@@ -234,10 +242,16 @@ footer a:hover,a:focus {
 .enterText {
     text-align: center;
     padding-top: 3em;
+    color: white;
+}
+
+.enterText h1{
+    font-size: 30px;
 }
 
 .enterText li {
     list-style-type: none;
+    font-weight: 300;
 }
 
 .enterText ul {
@@ -246,11 +260,17 @@ footer a:hover,a:focus {
 
 .enterText a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
-.enterText a:hover {
-    color: #01a1dd;
+#enter:hover, #ennter:focus {
+    cursor: pointer;
+}
+
+#question {
+    font-size: 22px;
+    font-weight: 300;
+
 }
 
 /*larger screens*/
@@ -261,7 +281,7 @@ footer a:hover,a:focus {
 
     .top {
         margin-bottom: 1em;
-        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/backgroundsmall.jpg);
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.2)), url(../img/blue-sm.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
@@ -274,37 +294,23 @@ footer a:hover,a:focus {
         text-align: right;
         color: white;
 	}
-    /*
-
-    .nav li {
-        font-size: 15px;
-        padding-left: 1em;
-        padding-right: 1em;
+    .navbar-right li a {
+        font-size: 13px;
     }
 
-    .nav li:hover {
-        color: #01a1dd;
-        font-size: 25px;
-    }
-*/
-    li:hover > .sub-menu {
-        display:block;
+    .types li {
+        display: inline;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
 
-    #storeh1, #storep {
-        text-align: center;
-    }
-
-    #storeh1 {
-        font-size: 120px;
-    }
-
-    #types li {
-        display: block;
+    .types {
+        padding-left: 2em;
+        padding-top: 2em;
     }
 
     .main {
-        background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(../img/coffee_main.jpg);
+        background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.8)), url(../img/coffee-main.png);
     }
 
     .main h1 {
@@ -315,31 +321,44 @@ footer a:hover,a:focus {
         padding-top: 0.5em;
     }
 
-    .enterText {
+    .enterText h1 {
+        color: black;
+        text-shadow: 2px 2px #FFF ;
         text-align: center;
-        padding-top: 3em;
-        font-size: 40px;
+        padding-top: 2em;
+        font-size: 50px;
+    }
+
+    .enterText{
+        color: black;
+    }
+    .enterText p {
+        padding-bottom: 1em;
     }
 
     .enterText li {
         list-style-type: none;
-        font-size: 30px;
+        display: inline;
+        margin-right: 1em;
     }
 
     .enterText a {
         text-decoration: none;
         color: black;
+        font-size: 20px;
+        font-weight: 400;
     }
 
     .enterText a:hover {
-        color: #01a1dd;
-        font-size: 40px;
+        font-size: 30px;
+        font-weight: bolder;
     }
 
     #enter {
         text-align: center;
         padding: 5em;
         font-size: 50px;
+
     }
 
     .ng-enter {
@@ -366,12 +385,19 @@ footer a:hover,a:focus {
 
 @media(min-width: 992px) {
     .top {
-        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/background.jpg);
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.2)), url(../img/blue-md.jpg);
+    }
+    .navbar li {
+        padding-right: 1em;
     }
 }
 
 @media(min-width: 1200px) {
     .top {
-        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/backgroundbig.jpg);
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.2)), url(../img/blue-lg.jpg);
+    }
+
+    .navbar li {
+        padding-right: 1.5em;
     }
 }

@@ -61,7 +61,7 @@
 
     <main class="container-fluid">
         <div class="row" id="order">
-            <h2><b>Your cart</b></h2>
+            <div class="col-md-6 col-md-offset-3">
             <table class="table">
                 <thead>
                 <tr>
@@ -69,15 +69,15 @@
                     <th>Lb</th>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Ext Price</th>
+                    <th>Ext. Price</th>
                 </tr>
                 </thead>
                 <tbody>
                     <!-- <tr ng-repeat="item in cart.items">
                         <td class="btn btn-default" ng-click="removeProduct($index)"> -->
                     <tr>
-                        <td class="btn btn-default">
-                            <i class="fa fa-minus"></i></td>
+                        <td class="btn btn-default"><a href="#">
+                            <i class="fa fa-minus"></i></a></td>
                         <!--
                             <td>{{item.name}}</td>
                             <td>{{item.quantity}}</td>
@@ -90,8 +90,8 @@
                        <td>$30</td>
                     </tr>
                     <tr>
-                        <td class="btn btn-default">
-                            <i class="fa fa-minus"></i></td>
+                        <td class="btn btn-default"><a href="">
+                            <i class="fa fa-minus"></i></a></td>
                         <td>5</td>
                         <td>Honduran</td>
                         <td>$15</td>
@@ -100,11 +100,12 @@
                </tbody>
            </table>
            <h4>Grand Total: $105</h4>
+            <a  class="btn btn-primary col-md-3 col-md-offset-9">Check Out</a>
             <!--
            <h3>Grand Total: {{getCartTotal() | currency}}</h3>
            -->
 
-            <a class="btn btn-primary">Check Out</a>
+        </div>
         </div>
     </main>
     <footer>
