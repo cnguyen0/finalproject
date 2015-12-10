@@ -27,11 +27,10 @@
 
     <!-- link to javascript -->
     <script src="../js/app.js"></script>
-    <script src="../js/shop.js"></script>
+
 </head>
 
-<body ng-app="ProductsApp" ng-controller="ProductsListCtrl">
-
+<body ng-app="WebApp" ng-controller="ProductsListCtrl">
     <nav class="navbar navbar-default" ng-app="WebApp" ng-controller="NavController">
         <div class="container">
             <div>
@@ -79,51 +78,48 @@
 
             <div class="col-md-10 col-sm-10">
                 <script type="text/ng-template" id="product-detail.html">
-                <div class="row modal-body product-detail">
+                    <div class="row modal-body product-detail">
+                        <div class="col-md-5 col-lg-5">
+                            <img class="detail-img" ng-src="{{product.photo}}"/>
+                        </div>
 
-                    <div class="col-md-5 col-lg-5">
-                        <img class="detail-img" ng-src="{{product.photo}}"/>
-
-                    </div>
-                    <div class="col-md-7 col-lg-7">
-                        <span id="close-window" ng-click="close()"><i class="fa fa-times"></i></span>
-                        <h3>{{product.name}}</h3>
-                        <h3>{{product.price | currency}}</h3>
-                        <div>
-                            <div class="selectBox">
-                                <p>Quantity</p>
-                                <select ng-model='product.quantity' class="form-control">
-                                    <option selected value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                </select>
-                            </div>
-                            <div class="selectBox" ng-if='product.grind'>
-                            <p>Grind</p>
-                                <select class="form-control">
-                                    <option ng-repeat="g in product.grind" value="{{g}}">{{g}}</option>
-                                </select>
-                            </div>
-                            <div >
-                                <button class="btn btn-info" ng-click="submit(product)"> ADD TO CART</button>
-                            </div>
+                        <div class="col-md-7 col-lg-7">
+                            <span id="close-window" ng-click="close()"><i class="fa fa-times"></i></span>
+                            <h3>{{product.name}}</h3>
+                            <h3>{{product.price | currency}}</h3>
                             <div>
-                                <hr/>
-                                <p>PRODUCT INFO</p>
-                                <p>{{product.description}}</p>
+                                <div class="selectBox">
+                                    <p>Quantity</p>
+                                    <select ng-model='product.quantity' class="form-control">
+                                        <option selected value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                <div class="selectBox" ng-if='product.grind'>
+                                <p>Grind</p>
+                                    <select class="form-control">
+                                        <option ng-repeat="g in product.grind" value="{{g}}">{{g}}</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn-info" ng-click="submit()"> ADD TO CART</button>
+                                </div>
+                                <div>
+                                    <hr/>
+                                    <p>PRODUCT INFO</p>
+                                    <p>{{product.description}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-
-                </div>
                 </script>
 
                 <div class="col-sm-6 col-md-4 col-lg-3 products-list"ng-repeat = "product in products |filter: filters |filter: filterCoffee |orderBy: 'name'">
@@ -137,12 +133,10 @@
                     <p>{{product.name}}</p>
                     <p>{{product.price | currency}}</p>
                 </div>
-
             </div>
         </div>
-
-
     </main>
+
     <footer>
         <div class="container">
         <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>

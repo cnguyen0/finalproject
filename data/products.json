@@ -9,7 +9,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Premium Varietals"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/ethiopianharrar.jpg"
     },
     {
         "name": "Colombian",
@@ -19,7 +19,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Premium Varietals"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/colombiancoffee.jpg"
     },
     {
         "name": "Costa Rican Terrazu",
@@ -29,7 +29,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Premium Varietals"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/terrazu.jpg"
     },
     {
         "name": "Ethiopian Yirgacheffe",
@@ -39,7 +39,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Premium Varietals", "Organic"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/ethiopianyirgacheffe.jpg"
     },
     {
         "name": "Honduran",
@@ -49,7 +49,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Premium Varietals", "Organic"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/hondurancoffee.jpg"
     },
     {
         "name": "Kenyan",
@@ -59,7 +59,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Premium Varietals"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/kenyancoffee.jpg"
     },
     {
         "name": "Sumatra",
@@ -69,7 +69,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Premium Varietals", "Organic"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/sumatracoffee.jpg"
     },
     {
         "name": "Terruno Nayarita",
@@ -79,7 +79,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Premium Varietals", "Organic"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/terrunonayarita.jpg"
     },
     {
         "name": "Church Creek Blend",
@@ -89,7 +89,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/churchcreekblend.jpg"
     },
     {
         "name": "French Creek Espresso",
@@ -99,7 +99,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/frenchcreekespresso.jpg"
     },
     {
         "name": "Girlfriend Blend",
@@ -109,7 +109,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/girlfriendblend.jpg"
     },
     {
         "name": "Half-Caf",
@@ -119,7 +119,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended", "Decaf"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/halfcaf.jpg"
     },
     {
         "name": "Holly Jolly Joe",
@@ -129,7 +129,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee", "Seasonal"],
         "coffeeType": ["Blended", "Organic"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/hollyjollyjoe.jpg"
     },
     {
         "name": "Jordan Creek Blend",
@@ -139,7 +139,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/jordancreekblend.jpg"
     },
     {
         "name": "Pilchuck Creek Blend",
@@ -149,7 +149,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/pilchuckcreekblend.jpg"
     },
     {
         "name": "South Seas Blend",
@@ -159,7 +159,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/southseasblend.png"
     },
     {
         "name": "Wildcat Morning Kicker",
@@ -169,7 +169,7 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/wildcatmorningkicker.jpg"
     },
     {
         "name": "Decaf",
@@ -179,28 +179,28 @@
         "grind": ["Whole Bean", "Coarse", "Medium", "Fine"],
         "categories": ["Coffee"],
         "coffeeType": ["Blended", "Decaf"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/decaf.jpg"
     },
     {
         "name": "Earl Grey",
         "description": "For the connoisseur, we offer Earl Grey Supreme, which uses a higher grade of teas along with the addition of Silver Tips. Most of our customers have never gone back to our regular Earl Grey once they have tasted the Supreme. If you love Bergamot and fine tea, this is the blend for you.",
         "price": 8,
         "categories": ["Tea"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/earlgrey.jpg"
     },
     {
         "name": "Rooibos Chai Sachets",
         "description": "Rooibos Chai brings together caffeine-free redbush herbal from South Africa with sweet Indian spices of clove, cardamom, and cinnamon. Savor Rooibos Chai in soothing soul-satisfying cups. The Indian spices impart a smooth, liberating earthy touch. Effusing a deliciously sweet aroma swirling in cinnamon, it is a cup of comfort that will have one welcoming seconds. 20 Wrapped Sachets. Each sachet brews 12oz cup. Brewing 4-5 minutes 212 degrees.",
         "price": 9.6,
         "categories": ["Tea"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/rooiboschaisachets.jpg"
     },
     {
         "name": "Double Chocolate Cocoa Mix",
         "description": "Perfect treat for a cold day out in the country, or snuggled in at home. Just mix and serve. Also good added to your coffee for an instant mocha! 8oz resealable container. DIRECTIONS: Place 2-3 tbls in hot (not boiling) water, stir and enjoy. INGREDIENTS: Sugar, Whey, Nonfat dry milk, Cocoa powder (Dutch Process), Non dairy creamer (canola or coconut oil, corn syrup solids), Natural & artificial flavors, Guar gum, Salt.",
         "price": 7.25,
         "categories": ["Beverage"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/hotcocoa.jpg"
     },
     {
         "name": "Cold Cup",
@@ -208,69 +208,69 @@
         "price": 11.95,
         "color": ["clear", "blue"],
         "categories": ["Gifts"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/bluestillycoldcups.jpg"
     },
     {
         "name": "Blue Stilly Coffee Mug",
         "description": "Enjoy your coffee in your own matching Blue Stilly Coffee Mug! Our ceramic cup is approximately 8oz. Great as a gift! You can also combine with a pound of our fresh roasted coffee and make it really special!",
         "price": 6,
         "categories": ["Gifts"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/bluestillymug.jpg"
     },
     {
         "name": "AeroPress Portable Coffee Maker",
         "description": "We have tried this little gem and are truly impressed. Perfect for single use, or maybe to put in your suitcase for those times away from home and you just cannot take the hotel coffee or Mom's canned coffee!  A terrific gift for any camper, backpacker, fisherman or RV'er. Utilize this tool to get the most out of coffee on the go. At work and don't want the sludge that nasty coffee pot serves up? Here's your answer! Sales tax included in the price!",
         "price": 30,
         "categories": ["Equipment"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/aeropress.jpg"
     },
     {
         "name": "Bodum 3-Cup Kenya French Press",
         "description": "The new Bodum coffee press Kenya is a crossroads between tradition and modernity! Kenya offers the best way of enjoying a cup of coffee. Easy and quick to use, it is the method if you want to brew coffee right. You will extract the most essential oils from your freshly ground coffee, leaving the least sediment in your cup! Simply add coffee ground just coarse enough not to pass through the screen and pour water heated to 195-200 degrees, wait 2-3 minutes and gently depress the plunger. Sales tax included in the price!",
         "price": 19.95,
         "categories": ["Equipment"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/bodum3cup.jpg"
     },
     {
         "name": "Bodum 6-Cup Kenya French Press",
         "description": "The new Bodum coffee press Kenya is a crossroads between tradition and modernity! Kenya offers the best way of enjoying a cup of coffee. Easy and quick to use, it is the method if you want to brew coffee right. You will extract the most essential oils from your freshly ground coffee, leaving the least sediment in your cup! Simply add coffee ground just coarse enough not to pass through the screen and pour water heated to 195-200 degrees, wait 2-3 minutes and gently depress the plunger. Sales tax included in the price!",
         "price": 39.95,
         "categories": ["Equipment"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/bodum6cup.jpg"
     },
     {
         "name": "Friis 16oz Coffee Canister",
         "description": "The Friis Coffee Vault - Coffee Savor keeps your coffee fresh. One Year of Friis Freshness Valves included, to vent away damaging CO2 gases. Maintain Rich, Full Coffee Flavor. Air-Tight Storage. Stores up to 16 oz of whole or ground Coffee. Full flavor starts with fresh coffee. The Friis Coffee Vault - Coffee Savor blocks out light and air to seal in flavor. The Friis Freshness Valve vents away continuous CO2 gases that are a result of the coffee roasting process. Stored in a cool, dry place, your coffee stays rich and full of flavor. Simply put, the Friis Coffee Vault - Coffee Savor keeps your coffee fresh longer. The Friis Coffee Vault - Coffee Savor model features a stainless steel base with an all black BPA free polymer lid. It measures 7.5in H x 5in D. It holds 16oz (pound) of whole bean or ground coffee. Also included is a measuring spoon, one year supply of Friis freshness valves, getting started instructions and the Art of Flavor booklet. Sales tax included in the price!",
         "price": 26,
         "categories": ["Equipment", "Gifts"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/friiscanister.jpg"
     },
     {
         "name": "Milk Frother",
         "description": "Easy Milk Frother or Cream Frother. A manual frother to match the Bodum Chambord French Press. Produces a smooth and creamy foam to top you cappuccino or latte.",
         "price": 24,
         "categories": ["Equipment"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/bodumfrother.jpg"
     },
     {
         "name": "Easter Cookies and Coffee",
         "description": "Cookies without coffee?  Who can imagine that.  Order a pound of your favorite Blue Stilly Coffee and 4 of these cute cookies. Buttery, crispy and delightful. Share with someone special. Additional cookies available.",
         "price": 23,
         "categories": ["Cookies", "Seasonal"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/eastercookies.jpg"
     },
     {
         "name": "Seasonal Cookies",
         "description": "In March, we are offering brightly decorated Easter Egg shaped cookies. These are frosted shortbread hand cut and decorated. Homemade by Darlene of Darlene's Baked Goods in Snohomish. Colors vary. She also does custom orders!",
         "price": 2.5,
         "categories": ["Cookies", "Seasonal"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/holidaycookies.jpg"
     },
     {
         "name": "Custom Gift Baskets",
         "description": "Need a gift? We can customize a coffee or Tea gift to your theme and colors. This basket will include 2 full pounds of our Fresh Roasted Coffee, or 2 Boxes of Tea Sachets,  plus linens and other various choices. Or if you prefer, just give us an idea, budget and we'll put something together for that special person or event. Allow 2 weeks for personalized items.",
         "price": 69.95,
         "categories": ["Gifts"],
-        "photo":"../img/product.jpg"
+        "photo":"../img/basketgifts.jpg"
     }
 ]

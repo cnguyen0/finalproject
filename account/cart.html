@@ -44,7 +44,7 @@
     </nav>
 
     <main class="container-fluid">
-        <div class="row" ng-controller="ProductDetailCtrl" id="order">
+        <div class="row" ng-controller="CartCtrl" id="order">
             <h2><b>Your cart</b></h2>
             <table class="table">
                 <thead>
@@ -59,7 +59,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in cart.items">
-                        <td class="btn btn-default" ng-click="removeFromCart($index)">
+                        <td class="btn btn-default" ng-click="removeProduct($index)">
                             <i class="fa fa-minus"></i></td>
                         <td>{{item.name}}</td>
                         <td>{{item.quantity}}</td>
