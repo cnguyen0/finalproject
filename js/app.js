@@ -1,10 +1,26 @@
-angular.module('WebApp', ['ui.bootstrap'])
+angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
     .factory('productsJSON', function($http) {
         return $http.get('../data/products.json')
     })
 
     .factory('usersJSON', function($http) {
         return $http.get('../data/userInformation.json');
+    })
+
+    .controller('HomeController', function($scope, $http) {
+        'use strict';
+
+        if (window.innerWidth > 768 && window.innerHeight > 803) {
+            $scope.visible = false;
+
+            $scope.toggle = function() {
+                $scope.visible = !$scope.visible;
+                document.getElementById('enter').style.display = 'none';
+            }
+
+        } else {
+            document.getElementById('enter').style.display = 'none';
+        }
     })
 
     .controller('ProductsListCtrl', function($scope,productsJSON){
@@ -75,7 +91,6 @@ angular.module('WebApp', ['ui.bootstrap'])
     })
 
     .controller('NavController', function($scope, $http, usersJSON) {
-        'use strict';
         usersJSON.then(function(info) {
             $scope.users = info.data;
         });
@@ -85,7 +100,6 @@ angular.module('WebApp', ['ui.bootstrap'])
         window.onscroll = changePos;
 
 		function changePos() {
-		    var header = document.getElementById("navbar");
 		    if (window.innerWidth > 768 && window.innerHeight > 803) {
 		    	var nav = document.querySelector("nav");
 
