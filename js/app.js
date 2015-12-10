@@ -10,7 +10,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
     .controller('HomeController', function($scope, $http) {
         'use strict';
 
-        if (window.innerWidth > 768 && window.innerHeight > 803) {
+        if (window.innerWidth > 768) {
             $scope.visible = false;
 
             $scope.toggle = function() {
@@ -20,6 +20,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
 
         } else {
             document.getElementById('enter').style.display = 'none';
+            $scope.visible = true;
         }
     })
 
