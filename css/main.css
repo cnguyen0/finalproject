@@ -12,19 +12,15 @@ body {
 body h1 {
     font-size: 50px;
 }
-
-/*.top, .navbar {
-	font-family: Raleway, Helvetica, Arial, serif;
-	margin-bottom: 0;
+body {
+    padding-top: 0;
 }
-*/
+
 
 #headlogo {
 	float: left;
 	margin-right: 1em;
 }
-
-
 
 li a:hover {
 	color: #01a1dd;
@@ -66,6 +62,10 @@ li a:hover {
     color: #01a1dd;
 }
 
+.btn-primary {
+    background-color: #01a1dd;
+}
+
 .product {
     list-style-type: none;
 
@@ -97,7 +97,12 @@ li a:hover {
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 2em;
+}
 
+.product-name {
+    color: #01a1dd;
+    font-size: 16px;
+    margin-bottom: 0;
 }
 
 .text-hover {
@@ -125,15 +130,27 @@ li a:hover {
     float:left;
     width: 200px;
     height: 200px;
+    border-radius: 5px;
 }
 .product-img {
     width: 200px;
     height: 200px;
     border-radius: 5px;
+    margin-bottom: 0.5em;
 }
 .product-detail {
     font-size: 14px;
 }
+
+.product-detail-hr {
+    width: 100%;
+}
+.product-detail .form-control {
+    width: auto;
+    margin-bottom: 1em;
+}
+
+
 
 #close-window {
     float:right;
@@ -173,6 +190,7 @@ hr {
     color: #777;
     text-align: center;
 }
+
 
 footer {
     font-size: 15px;
@@ -241,7 +259,6 @@ footer a:hover,a:focus {
     #storeh1 {
         font-size: 120px;
     }
-
 
     #types li {
         display: block;
@@ -314,9 +331,6 @@ footer a:hover,a:focus {
 @media(min-width: 992px) {
     .top {
         background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/background.jpg);
-    }
-    body {
-        padding-top: 0px;
     }
 }
 

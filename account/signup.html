@@ -10,6 +10,7 @@
 
     <!-- link to css -->
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="../img/icon.png"/>
 
     <!-- angular script file -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
@@ -21,11 +22,6 @@
 </head>
 
 <body ng-app="WebApp">
-    <div class="container top">
-        <h1>Blue Stilly Coffee</h1>
-        <!-- Can we get the blue stilly coffee to have some transition? -->
-    </div>
-
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -39,29 +35,30 @@
             </div>
             <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
                 <ul class="nav navbar-nav">
-                    <li><a href="../nav/aboutus.html">OUR STORY</a></li>
-                    <li><a href="../nav/store.html">STORE</a></li>
-                    <li><a href="../nav/news.html">NEWS</a></li>
-                    <li><a href="../nav/contact.html">CONTACT US</a></li>
+                    <li><a href="../navbar/aboutus.html">OUR STORY</a></li>
+                    <li><a href="../navbar/store.html">STORE</a></li>
+                    <li><a href="../navbar/news.html">NEWS</a></li>
+                    <li><a href="../navbar/contact.html">CONTACT US</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../account/signup.html"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
-                    <li><a href="../account/login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
-                    <li><a href="../account/cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+                    <li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="container top"></div>
 
     <main class = "container-fluid" >
         <div class="row">
             <h3 class="text-center">Sign Up</h3>
             <hr/>
             <p class="subtitle">Sign Up Today!</p>
-            <form class="col-md-4 col-md-offset-4" name="signUp" ng-submit="submit()" novalidate>
+            <form class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" name="signUp" ng-submit="submit()" novalidate>
                 <div class="form-group">
                     <label class="formLabel" for="fname">First name</label>
-                    <input type="text" id = "fname" class="form-control"
+                    <input autofocus type="text" id = "fname" class="form-control"
                             ng-model="user.fname"/>
                 </div>
 
@@ -81,7 +78,7 @@
 
                 <div class="form-group">
                     <label class="formLabel" for="email">Email</label>
-                    <input autofocus type="email" id="email" class="form-control" required
+                    <input type="email" id="email" class="form-control" required
                             ng-model="user.email">
                     <p class="validation-error"
                        ng-if="signUp.email.$dirty && signUp.email.$error.required">
