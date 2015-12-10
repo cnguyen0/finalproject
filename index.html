@@ -26,57 +26,37 @@
     <!-- link to javascript -->
     <script src="js/app.js"></script>
 </head>
+
+
 <body ng-app="WebApp">
-	<div class="container top">
-		<h1>Blue Stilly Coffee</h1>
-	</div>
+    <!-- WHEN MEDIA MIN-WIDTH > 768PX -->
 
-	<nav class="navbar navbar-default" ng-controller="NavController">
-		<div class="container">
-			<div>
-				<ul class="nav navbar-nav">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="navbar/aboutus.html">Our Story</a></li>
-					<li><a href="navbar/store.html">Store</a></li>
-					<li><a href="navbar/news.html">News and Events</a></li>
-					<li><a href="navbar/contact.html">Contact Us</a></li>
-				</ul>
+    <div ng-controller="HomeController">
+        <div class="main">
+            <div class="container">
+                <h1 ng-if="visible">Welcome to<br />Blue Stilly Coffee!</h1>
+            </div>
 
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="account/signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="account/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					<li><a href="account/cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+            <h2 id="enter" ng-click="toggle()">Click here<br />to enter</h2>
 
-	<div class="container">
-		<h1>
-			Welcome to Blue Stilly Coffee!
-		</h1>
-        
-        <h2>Who Are We?</h2>
-        <p>
-            One day, because of our love for coffee,we decided to learn as much as we could. We had already tried many different varieties and ordered from many roasters. We decided to visit some of the local roasters and discovered we loved the drum roasted coffee over the 'air' roasted. Drum roasted had more depth and flavor. We began to mail order coffee in bulk from our favorite roaster for ourselves, friends and family. It was time to strike out on our own. We purchased a Diedrich drum style roaster. It was a small-batch coffee shop model in brass, metallic green and black. After training with the old owner of the roaster, we incorporated and started business. Next we attended a training program at the Diedrich factory to hone our skills. It has worked out well for us, as we are HUGE consumers ourselves! We will generally roast your selection medium/dark, however, feel free to request your personal preference when you order!
-        </p>
-        <p>
-            Roasted to order, and shipped FRESH to your door in a couple of days. We sell via the internet as well as by referral from our very satisfied customers!
-        </p>
-        <p>
-            So please, if you love our coffee, please tell everyone. If you don’t, please tell us!
-        </p>
-        <p>
-            Thank you,
-        </p>
-        <p>
-            Rick and Sue
-        </p>
+            <div class="enterText" ng-if="visible">
+                <p>What would you like to do?</p>
+                <ul>
+                    <li><a href="navbar/aboutus.html">Read Our Story</a></li>
+                    <li><a href="navbar/store.html">Shop</a></li>
+                    <li><a href="navbar/contact.html">Contact Us</a></li>
+                    <li><a href="account/signup.html">Sign up</a> / <a href="account/login.html">Log In</a></li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
 	<footer>
+		<hr/>
 		<div class="container">
-		<p><a href="navbar/aboutus.html">About Us</a> | <a href="navbar/contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
+			<p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+			<p>&copy; 2014 <strong>Blue Stilly</strong> Coffee. All Rights Reserved</p>
 		</div>
 	</footer>
 </body>

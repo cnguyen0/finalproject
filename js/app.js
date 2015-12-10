@@ -1,10 +1,27 @@
-angular.module('WebApp', ['ui.bootstrap', 'LocalStorageModule'])
+
+angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
     .factory('productsJSON', function($http) {
         return $http.get('../data/products.json')
     })
 
     .factory('usersJSON', function($http) {
         return $http.get('../data/userInformation.json');
+    })
+
+    .controller('HomeController', function($scope, $http) {
+        'use strict';
+
+        if (window.innerWidth > 768 && window.innerHeight > 803) {
+            $scope.visible = false;
+
+            $scope.toggle = function() {
+                $scope.visible = !$scope.visible;
+                document.getElementById('enter').style.display = 'none';
+            }
+
+        } else {
+            document.getElementById('enter').style.display = 'none';
+        }
     })
 
     .controller('ProductsListCtrl', function($scope,productsJSON){
@@ -15,18 +32,13 @@ angular.module('WebApp', ['ui.bootstrap', 'LocalStorageModule'])
 
 
             $scope.categories = _.uniq(_.flatten(_.pluck($scope.products, 'categories')));
-            $scope.coffeeTypes = _.uniq(_.flatten(_.pluck($scope.products, 'coffeeType')));
 
             $scope.filters = {};
-            $scope.filterCoffee = {};
-            console.log($scope.filterCoffee);
-
-
         });
-
     })
 
     .controller('ProductDetailCtrl', function($scope, $filter, $uibModal, $log, productsJSON) {
+        'use strict';
 
         $scope.closeAlert = function(){
             $scope.confirmation = !$scope.confirmation;
@@ -63,6 +75,8 @@ angular.module('WebApp', ['ui.bootstrap', 'LocalStorageModule'])
     })
 
     .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, product) {
+        'use strict';
+
         $scope.product = product;
         $scope.product.quantity = '1';
         $scope.close = function () {
@@ -109,6 +123,8 @@ angular.module('WebApp', ['ui.bootstrap', 'LocalStorageModule'])
 
 
     .controller('CartCtrl', function($scope, cartService) {
+        'use strict';
+
         $scope.cart = cartService.getCart();
 
 
@@ -134,6 +150,7 @@ angular.module('WebApp', ['ui.bootstrap', 'LocalStorageModule'])
 
     .controller('NavController', function($scope, $http, usersJSON) {
         'use strict';
+
         usersJSON.then(function(info) {
             $scope.users = info.data;
         });
@@ -143,7 +160,6 @@ angular.module('WebApp', ['ui.bootstrap', 'LocalStorageModule'])
         window.onscroll = changePos;
 
 		function changePos() {
-		    var header = document.getElementById("navbar");
 		    if (window.innerWidth > 768 && window.innerHeight > 803) {
 		    	var nav = document.querySelector("nav");
 
@@ -181,8 +197,8 @@ angular.module('WebApp', ['ui.bootstrap', 'LocalStorageModule'])
                 }
             }
         }
-    })
-
+    });
+/*
     .directive('validPassword', function() {
         return {
             require:'ngModel',
@@ -192,12 +208,7 @@ angular.module('WebApp', ['ui.bootstrap', 'LocalStorageModule'])
                 }
             }
         }
-    });
-
-
-
-
-
+    });*/
 
 
 

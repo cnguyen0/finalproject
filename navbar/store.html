@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- link to css -->
     <link rel="stylesheet" href="../css/main.css">
-
+    <link rel="icon" href="../img/icon.png"/>
 
     <!-- angular.js-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 
     <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
 
     <!--loadash-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
@@ -31,58 +32,62 @@
 </head>
 
 <body ng-app="WebApp" ng-controller="ProductsListCtrl">
-    <nav class="navbar navbar-default" ng-app="WebApp" ng-controller="NavController">
-        <div class="container">
-            <div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html" class="active">Blue Stilly</a>
+            </div>
+
+            <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
                <ul class="nav navbar-nav">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="aboutus.html">Our Story</a></li>
-                    <li><a href="store.html">Store</a></li>
-                    <li><a href="news.html">News and Events</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+
+                    <li><a href="aboutus.html">OUR STORY</a></li>
+                    <li><a class="active" href="store.html">STORE</a></li>
+                    <li><a href="news.html">NEWS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../account/signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="../account/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    <li><a href="../account/cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
+                    <li><a href="../account/signup.html"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
+                    <li><a href="../account/login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+                    <li><a href="../account/cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <main class="container" ng-controller="ProductDetailCtrl">
-        <h2>Store</h2>
-        <div class="alert alert-success fade in" ng-if="confirmation">
-            <a href="#" class="close" ng-click = 'closeAlert()'>&times;</a>
-            <p>{{selectedProduct.name}} is added to your cart!</p>
-        </div>
+        <h3 class="text-center">STORE</h3>
+        <hr/>
+
 
         <div class="row row-eq-height">
-            <div class="col-md-2 col-sm-2">
-
-                <ul class="types">
-                    <li>Shop By</li>
+            <div class=" container types">
+                <ul>
                     <li ng-repeat="c in categories |orderBy: c">
                         <a href="#types" ng-click="filters.categories = c">{{c}}</a>
                     </li>
                 </ul>
-                <ul class="types">
-                    <li>Coffee Sort By</li>
-                    <li ng-repeat = "type in coffeeTypes |orderBy: type">
-                        <a href="#types"ng-click="filterCoffee.coffeeTypes = type">{{type}}</a>
-                        
-                    </li>
-                </ul>
+                <div class="alert alert-success fade in" ng-if="confirmation">
+                    <a href="#" class="close" ng-click = 'closeAlert()'>&times;</a>
+                    <p>{{selectedProduct.name}} is added to your cart!</p>
+                </div>
             </div>
 
-            <div class="col-md-10 col-sm-10">
+            <div class="col-md-12">
                 <script type="text/ng-template" id="product-detail.html">
                     <div class="row modal-body product-detail">
                         <div class="col-md-5 col-lg-5">
                             <img class="detail-img" ng-src="{{product.photo}}"/>
                         </div>
-
                         <div class="col-md-7 col-lg-7">
                             <span id="close-window" ng-click="close()"><i class="fa fa-times"></i></span>
                             <h3>{{product.name}}</h3>
@@ -122,7 +127,7 @@
                     </div>
                 </script>
 
-                <div class="col-sm-6 col-md-4 col-lg-3 products-list"ng-repeat = "product in products |filter: filters |filter: filterCoffee |orderBy: 'name'">
+                <div class="col-sm-6 col-md-4 col-lg-3 products-list" ng-repeat = "product in products |filter: filters|orderBy: 'categories'">
                     <div class="text-hover">
                         <img class="product-img" ng-src="{{product.photo}}"/>
                         <div class="overlay">
@@ -130,7 +135,7 @@
                         </div>
                     </div>
 
-                    <p>{{product.name}}</p>
+                    <p class="product-name">{{product.name}}</p>
                     <p>{{product.price | currency}}</p>
                 </div>
             </div>
@@ -138,8 +143,10 @@
     </main>
 
     <footer>
+        <hr/>
         <div class="container">
-        <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
+        <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+            <p>&copy; 2014 <strong>Blue Stilly</strong> Coffee. All Rights Reserved</p>
         </div>
     </footer>
 </body>
