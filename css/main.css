@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300italic);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
 body {
 	font-family: "Fira Sans", Helvetica, Arial, serif;
@@ -71,21 +72,69 @@ li:hover {
 
 .product {
     list-style-type: none;
-}
 
+}
 #types{
     list-style-type: none;
-    display: inline;
+
     padding-left: 1.5em;
     padding-top: 3em;
     padding-bottom: 3em;
 
 }
-#types li{
+.types a {
+    text-decoration: none;
+}
+
+.types li {
     display: inline;
 }
-#types a {
-    text-decoration: none;
+
+.products-list {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 2em;
+
+}
+
+.text-hover {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.text-hover .overlay {
+    position:absolute;
+    top:80%;
+    width:200px;
+    height:20%;
+    background-color:rgba(255,255,255,.75);
+    display:none;
+    text-align: center;
+}
+.text-hover:hover .overlay {
+    display:block;
+    cursor:pointer;
+}
+.detail-img {
+    float:left;
+}
+.product-detail {
+    font-size: 14px;
+}
+#close-window {
+    float:right;
+    cursor:pointer;
+    font-weight: bold;
+}
+
+#close-window:hover {
+    color: #01a1dd;
+}
+
+
+.form-control {
+    width:auto;
 }
 
 footer {
@@ -100,7 +149,6 @@ footer a {
     text-decoration: none;
     color: white;
 }
-
 /*larger screens*/
 @media (min-width: 768px) {
     body {
@@ -142,5 +190,9 @@ footer a {
 
     #storeh1 {
         font-size: 120px;
+    }
+
+    #types li {
+        display: block;
     }
 }

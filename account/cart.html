@@ -44,12 +44,35 @@
     </nav>
 
     <main class="container-fluid">
-        <div class="row">
-
+        <div class="row" ng-controller="ProductDetailCtrl" id="order">
+            <h2><b>Your cart</b></h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Lb</th>
+                    <th>Name</th>
+                    <th>Grind</th>
+                    <th>Price</th>
+                    <th>Ext Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in cart.items">
+                        <td class="btn btn-default" ng-click="removeFromCart($index)">
+                            <i class="fa fa-minus"></i></td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.grind}}</td>
+                        <td>{{item.price | currency}}</td>
+                        <td>{{item.price * item.quantity | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Grand Total: {{getCartTotal() | currency}}</h3>
+            <a class="btn btn-primary" ui-sref="checkOut">Check Out</a>
         </div>
     </main>
-
-
     <footer>
         <div class="container">
         <p><a href="../navbar/aboutus.html">About Us</a> | <a href="../navbar/contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
