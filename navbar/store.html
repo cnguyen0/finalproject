@@ -33,7 +33,7 @@
 
 <body ng-app="WebApp" ng-controller="ProductsListCtrl">
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container-fluid">
 
             <div class="navbar-header">
@@ -72,13 +72,16 @@
         <div class="row row-eq-height">
             <div class=" container types">
                 <ul>
+                    <li>
+                        <a href="#types" ng-click = "filters.categories = ''">All</a>
+                    </li>
                     <li ng-repeat="c in categories |orderBy: c">
                         <a href="#types" ng-click="filters.categories = c">{{c}}</a>
                     </li>
                 </ul>
                 <div class="alert alert-success fade in" ng-if="confirmation">
                     <a href="#" class="close" ng-click = 'closeAlert()'>&times;</a>
-                    <p>{{selectedProduct.name}} is added to your cart!</p>
+                    <p>{{selectedProduct.quantity}} {{selectedProduct.name}} is added to your cart!</p>
                 </div>
             </div>
 
