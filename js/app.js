@@ -1,13 +1,15 @@
 
 angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
+    .constant('productKey', 'cart')
     .factory('productsJSON', function($http) {
         return $http.get('../data/products.json')
     })
-
     .factory('usersJSON', function($http) {
         return $http.get('../data/userInformation.json');
     })
-
+    .factory('usersJSON', function(localStorageService, storageKey) {
+        return localStorageService.get(storageKey) || {items:[]};
+    })
     .controller('HomeController', function($scope, $http) {
         'use strict';
 
@@ -65,8 +67,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
             modalInstance.result.then(function (selectedProduct, cartService) {
 
                 $scope.selectedProduct = selectedProduct;
-                cartService.addProduct(selectedProduct);
-                //console.log($scope.selectedProduct);
+                // cartService.addProduct(selectedProduct);
                 $scope.confirmation = !$scope.confirmation;
 
             });
@@ -90,11 +91,11 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
 
     })
 
-    .service('cartService', function() {
-        var cart = angular.fromJson(localStorage.getItem('product')) || {items:[]};
+    .service('cartService', function(productKey) {
+        var cart = angular.fromJson(localStorage.getItem(productKey)) || {items:[]};
 
         function saveData() {
-            localStorage.setItem('product', angular.toJson($scope.cart));
+            localStorage.setItem(productKey, angular.toJson($scope.cart));
         }
 
         var addProduct = function(product) {
@@ -106,7 +107,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
                 name: product.name,
                 price: product.price,
                 quantity: product.quantity,
-                grind: product.grind,
+                //grind: product.grind,
                 extPrice: product.price * product.quantity
             });
             saveData();
@@ -199,8 +200,8 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
             }
         }
     });
-/*
-    .directive('validPassword', function() {
+
+   /* .directive('validPassword', function() {
         return {
             require:'ngModel',
             link: function(scope, elem, attrs, controller) {

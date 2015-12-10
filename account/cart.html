@@ -14,8 +14,12 @@
 
     <!-- angular script file -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
-    
+
+    <!-- ui bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.js"></script>
+
     <!-- link to javascript -->
     <script src="../js/app.js"></script>
 </head>
@@ -56,7 +60,7 @@
     </div>
 
     <main class="container-fluid">
-        <div class="row" ng-controller="CartCtrl" id="order">
+        <div class="row" id="order">
             <h2><b>Your cart</b></h2>
             <table class="table">
                 <thead>
@@ -64,25 +68,43 @@
                     <th></th>
                     <th>Lb</th>
                     <th>Name</th>
-                    <th>Grind</th>
                     <th>Price</th>
                     <th>Ext Price</th>
                 </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in cart.items">
-                        <td class="btn btn-default" ng-click="removeProduct($index)">
+                    <!-- <tr ng-repeat="item in cart.items">
+                        <td class="btn btn-default" ng-click="removeProduct($index)"> -->
+                    <tr>
+                        <td class="btn btn-default">
                             <i class="fa fa-minus"></i></td>
-                        <td>{{item.name}}</td>
-                        <td>{{item.quantity}}</td>
-                        <td>{{item.grind}}</td>
-                        <td>{{item.price | currency}}</td>
-                        <td>{{item.price * item.quantity | currency}}</td>
+
+                            <td>{{item.name}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.price | currency}}</td>
+                            <td>{{item.price * item.quantity | currency}}</td>
+                       <!--
+                       <td>2</td>
+                       <td>Ethiopian Harrar</td>
+                       <td>$15</td>
+                       <td>$30</td>
                     </tr>
-                </tbody>
-            </table>
-            <h3>Grand Total: {{getCartTotal() | currency}}</h3>
-            <a class="btn btn-primary" ui-sref="checkOut">Check Out</a>
+                    <tr>
+                        <td class="btn btn-default">
+                            <i class="fa fa-minus"></i></td>
+                        <td>5</td>
+                        <td>Honduran</td>
+                        <td>$15</td>
+                        <td>$75</td>
+                    </tr> -->
+               </tbody>
+           </table>
+           <h4>Grand Total: $105</h4>
+            <!--
+           <h3>Grand Total: {{getCartTotal() | currency}}</h3>
+           -->
+
+            <a class="btn btn-primary">Check Out</a>
         </div>
     </main>
     <footer>

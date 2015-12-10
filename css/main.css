@@ -24,6 +24,16 @@ body {
 }
 
 
+h4 {
+    color:#D87E28;
+    text-align: right;
+    padding-right: 10px;
+}
+
+tbody {
+    padding: 2em;
+}
+
 #headlogo {
 	float: left;
 	margin-right: 1em;
