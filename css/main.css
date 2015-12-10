@@ -30,6 +30,9 @@ h4 {
     text-align: right;
     padding-right: 10px;
 }
+.product-detail h3 {
+    margin-top: 0em;
+}
 
 tbody {
     padding: 2em;
@@ -134,7 +137,7 @@ li a:hover {
 .text-hover .overlay {
     position:absolute;
     top:80%;
-    width:200px;
+    width:100%;
     height:20%;
     background-color:rgba(255,255,255,.75);
     display:none;
@@ -151,6 +154,7 @@ li a:hover {
     width: 200px;
     height: 200px;
     border-radius: 5px;
+    margin-right: 1em;
 }
 .product-img {
     width: 200px;
@@ -161,6 +165,7 @@ li a:hover {
 .product-detail {
     font-size: 14px;
     font-weight: 300;
+    margin-top: 1em;
 }
 
 
@@ -179,7 +184,30 @@ li a:hover {
 #close-window {
     float:right;
     cursor:pointer;
+    margin-right: 0.5em;
+    margin-top: 0.2em;
+    font-weight: 300;
+    font-size: 14px;
 
+}
+.img-aboutus {
+    width: 100%;
+    height:auto;
+    margin-top: 5em;
+}
+
+pre {
+    border: none;
+    background-color: white;
+    font-family: inherit;
+}
+
+.aboutus {
+    font-size: 14px;
+}
+
+.row {
+    width: 100%;
 }
 
 #close-window:hover {
@@ -359,6 +387,10 @@ footer a:hover,a:focus {
         padding: 5em;
         font-size: 50px;
 
+    }
+
+    .detail-img {
+        margin-right: 0;
     }
 
     .ng-enter {

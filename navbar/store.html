@@ -89,12 +89,13 @@
 
             <div class="col-md-12">
                 <script type="text/ng-template" id="product-detail.html">
+                    <span id="close-window" ng-click="close()"><i class="fa fa-times"></i></span>
                     <div class="row modal-body product-detail">
-                        <div class="col-md-5 col-lg-5">
+
+                        <div class="col-sm-5 col-md-5 col-lg-5">
                             <img class="detail-img" ng-src="{{product.photo}}"/>
                         </div>
-                        <div class="col-md-7 col-lg-7">
-                            <span id="close-window" ng-click="close()"><i class="fa fa-times"></i></span>
+                        <div class="col-sm-7 col-md-7 col-lg-7">
                             <h3>{{product.name}}</h3>
                             <h3>{{product.price | currency}}</h3>
                             <div>
