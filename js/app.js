@@ -1,12 +1,15 @@
-angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
+
+angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
+    .constant('productKey', 'cart')
     .factory('productsJSON', function($http) {
         return $http.get('../data/products.json')
     })
-
     .factory('usersJSON', function($http) {
         return $http.get('../data/userInformation.json');
     })
-
+    .factory('usersJSON', function(localStorageService, storageKey) {
+        return localStorageService.get(storageKey) || {items:[]};
+    })
     .controller('HomeController', function($scope, $http) {
         'use strict';
 
@@ -34,14 +37,12 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
             $scope.categories = _.uniq(_.flatten(_.pluck($scope.products, 'categories')));
 
             $scope.filters = {};
-
-
-
         });
-
     })
 
     .controller('ProductDetailCtrl', function($scope, $filter, $uibModal, $log, productsJSON) {
+        'use strict';
+
         $scope.closeAlert = function(){
             $scope.confirmation = !$scope.confirmation;
 
@@ -63,10 +64,10 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
                 }
             });
 
-            modalInstance.result.then(function (selectedProduct) {
+            modalInstance.result.then(function (selectedProduct, cartService) {
 
                 $scope.selectedProduct = selectedProduct;
-                //console.log($scope.selectedProduct);
+                // cartService.addProduct(selectedProduct);
                 $scope.confirmation = !$scope.confirmation;
 
             });
@@ -76,6 +77,8 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
     })
 
     .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, product) {
+        'use strict';
+
         $scope.product = product;
         $scope.product.quantity = '1';
         $scope.close = function () {
@@ -84,44 +87,66 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
 
         $scope.submit = function() {
             $uibModalInstance.close($scope.product);
-
         }
 
     })
 
-    .controller('NavController', function($scope, $http, usersJSON) {
-        usersJSON.then(function(info) {
-            $scope.users = info.data;
-        });
+    .service('cartService', function(productKey) {
+        var cart = angular.fromJson(localStorage.getItem(productKey)) || {items:[]};
 
-        $scope.chosenUser = {};
+        function saveData() {
+            localStorage.setItem(productKey, angular.toJson($scope.cart));
+        }
 
-        window.onscroll = changePos;
+        var addProduct = function(product) {
+            var qty = 0;
+            cart.items.forEach(function (item) {
+                qty += item.quantity;
+            });
+            cart.items.push({
+                name: product.name,
+                price: product.price,
+                quantity: product.quantity,
+                //grind: product.grind,
+                extPrice: product.price * product.quantity
+            });
+            saveData();
+        };
 
-		function changePos() {
-		    if (window.innerWidth > 768 && window.innerHeight > 803) {
-		    	var nav = document.querySelector("nav");
+        var getCart = function() {
+            return cart;
+        };
 
-		    	if (window.pageYOffset > 400) {
-		        nav.style.position = "fixed";
-		        nav.style.top = "0px";
-		        nav.style.width = "100%";
+        return {
+            getCart: getCart,
+            addProduct: addProduct
+        };
+    })
 
-		        nav.style.backgroundColor = "#F1F1F1";
-		        nav.style.borderRadius = "5px";
-		        nav.style.boxShadow = "0px 10px 10px #939393";
-		    	} else {
-			    	nav.style.position = "";
-			        nav.style.top = "";
 
-			        nav.style.backgroundColor = "transparent";
-			        nav.style.borderRadius = "none";
-			        nav.style.border = "0px";
-			        nav.style.boxShadow = "";
-      			}
-    		}
-    	}
-	})
+    .controller('CartCtrl', function($scope, cartService) {
+        'use strict';
+
+        $scope.cart = cartService.getCart();
+
+
+        // Remove product from Cart
+        $scope.removeProduct = function(index) {
+            $scope.cart.items.splice(index, 1);
+            saveData();
+        };
+
+
+        // Return total prices in cart
+        $scope.getCartTotal = function() {
+            var total = 0;
+            $scope.cart.items.forEach(function(item) {
+                total += item.extPrice;
+            });
+            return total;
+        };
+
+    })
 
     .directive('existUser', function() {
         return {
@@ -136,9 +161,9 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
                 }
             }
         }
-    })
+    });
 
-    .directive('validPassword', function() {
+   /* .directive('validPassword', function() {
         return {
             require:'ngModel',
             link: function(scope, elem, attrs, controller) {
@@ -147,12 +172,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate'])
                 }
             }
         }
-    });
-
-
-
-
-
+    });*/
 
 
 

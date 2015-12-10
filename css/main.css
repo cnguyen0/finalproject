@@ -25,6 +25,16 @@ body {
 }
 
 
+h4 {
+    color:#01a1dd;
+    text-align: right;
+    padding-right: 10px;
+}
+
+tbody {
+    padding: 2em;
+}
+
 #headlogo {
 	float: left;
 	margin-right: 1em;
@@ -78,13 +88,17 @@ li a:hover {
 .types{
     list-style-type: none;
     display: inline;
-    padding-left: 2em;
-    padding-top: 2em;
     padding-bottom: 2em;
     font-size: 16px;
     text-align: center;
 
 }
+
+.types ul {
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
 .types a {
     text-decoration: none;
     color: #777;
@@ -92,14 +106,17 @@ li a:hover {
 
 .types li {
     display: inline;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-right: 0.2em;
 
 }
 
 .products-list {
     font-size: 14px;
     margin-bottom: 2em;
+}
+
+.products-list .item {
+    text-align: center;
 }
 
 .product-name {
@@ -153,6 +170,10 @@ li a:hover {
 .product-detail .form-control {
     width: auto;
     margin-bottom: 1em;
+}
+
+#table td, #table th {
+    padding-bottom: 0.3em;
 }
 
 #close-window {
@@ -277,8 +298,15 @@ footer a:hover,a:focus {
         font-size: 13px;
     }
 
-    #types li {
-        display: block;
+    .types li {
+        display: inline;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .types {
+        padding-left: 2em;
+        padding-top: 2em;
     }
 
     .main {
