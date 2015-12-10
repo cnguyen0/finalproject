@@ -190,10 +190,11 @@ li a:hover {
     font-size: 14px;
 
 }
+
 .img-aboutus {
     width: 100%;
-    height:auto;
-    margin-top: 5em;
+    height: auto;
+    margin-top: 2em;
 }
 
 pre {
@@ -202,8 +203,16 @@ pre {
     font-family: inherit;
 }
 
-.aboutus {
-    font-size: 14px;
+.aboutus h3 {
+    color: #01a1dd;
+}
+
+#about1pic {
+    padding-top: 1em;
+}
+
+#aboutSpacer {
+    padding: 2em;
 }
 
 .row {
@@ -303,10 +312,6 @@ footer a:hover,a:focus {
 
 /*larger screens*/
 @media (min-width: 768px) {
-    body {
-        font-size: 20px;
-    }
-
     .top {
         margin-bottom: 1em;
         background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.2)), url(../img/blue-sm.jpg);
