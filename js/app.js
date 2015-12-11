@@ -1,16 +1,18 @@
 
 angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
     .constant('productKey', 'cart')
+
     .factory('productsJSON', function($http) {
         return $http.get('../data/products.json')
     })
     .factory('usersJSON', function($http) {
         return $http.get('../data/userInformation.json');
     })
-    .factory('usersJSON', function(localStorageService, storageKey) {
+    .factory('localStorageJSON', function(localStorageService, storageKey) {
         return localStorageService.get(storageKey) || {items:[]};
     })
-    .controller('HomeController', function($scope, $http) {
+
+    .controller('HomeController', function($scope, $http, usersJSON) {
         'use strict';
 
         if (window.innerWidth > 768) {
@@ -124,8 +126,12 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
     })
 
 
-    .controller('CartCtrl', function($scope, cartService) {
+    .controller('CartCtrl', function($scope, cartService, usersJSON) {
         'use strict';
+
+        usersJSON.then(function(info) {
+            $scope.customers = info.data;
+        });
 
         $scope.cart = cartService.getCart();
 
@@ -147,32 +153,48 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule'])
         };
 
     })
+    .controller('LoginCtrl', function($scope, usersJSON) {
+        usersJSON.then(function(results) {
+            $scope.customers = results.data;
+        });
+
+        $scope.login = function() {
+            //login user
+        };
+
+    })
 
     .directive('existUser', function() {
         return {
             require: 'ngModel',
             link: function(scope, elem, attrs, controller) {
                 controller.$validators.existUser = function(value) {
-                    scope.users.forEach(function(user) {
-                        scope.chosenUser = user;
-                        return (value === user.email);
-                    });
-                    return false;
+                    return undefined == value ||
+                            value.length === 0 ||
+                            undefined != scope.customers.find(function(cust) {
+                                return cust.Email === value;
+                            });
+
+                }
+            }
+        }
+    })
+    .directive('validPassword', function() {
+        return {
+            require: 'ngModel',
+            link: function(scope, elem, attrs, controller) {
+                controller.$validators.validPassword = function(value) {
+                    return undefined == value ||
+                            value.length === 0 ||
+                            undefined != scope.customers.find(function(cust) {
+                                return cust.Email === scope.user.email &&
+                                        cust.Password === value;
+                            });
                 }
             }
         }
     });
 
-   /* .directive('validPassword', function() {
-        return {
-            require:'ngModel',
-            link: function(scope, elem, attrs, controller) {
-                controller.$validators.validPassword = function(value) {
-                    return (value === scope.chosenUser.password);
-                }
-            }
-        }
-    });*/
 
 
 

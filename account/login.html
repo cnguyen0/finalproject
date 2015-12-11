@@ -51,17 +51,18 @@
     </nav>
     <div class="container top"></div>
 
-    <main id="login">
+    <main id="login" ng-controller="LoginCtrl">
         <div class = "container-fluid">
         <div class="row">
             <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
                 <h3 class="text-center">LOG IN</h3>
                 <hr/>
                 <p class="subtitle">Welcome Back Coffee Lovers!</p>
-            <form class="form-vertical" name="logIn" ng-submit="submit()" novalidate>
+            <form class="form-vertical" name="logIn" ng-submit="login()" novalidate>
                 <div class="form-group">
                     <label class="formLabel" for="email">Email</label>
-                    <input autofocus type="email" id="email" class="form-control" required
+                    <input autofocus type="email" id="email" name="email"
+                           class="form-control" required
                             ng-model="user.email" exist-user>
                     <p class="validation-error"
                        ng-if="logIn.email.$dirty && signUp.email.$error.required">
@@ -79,17 +80,18 @@
 
                 <div class="form-group">
                     <label class="formLabel" for="password">Password</label>
-                    <input type="password" id="password" class="form-control" required
+                    <input type="password" id="password"
+                           name="password"
+                           class="form-control" required
                            ng-model="user.password" valid-password/>
                     <p class="validation-error"
                        ng-if="logIn.password.$dirty && logIn.password.$error.required">
                         Password is required.
                     </p>
-                    <!--
                     <p class="validation-error"
                        ng-if="logIn.password.$error.validPassword">
                         Invalid account or Password.
-                    </p> -->
+                    </p>
                 </div>
 
                 <div class="form-group">
