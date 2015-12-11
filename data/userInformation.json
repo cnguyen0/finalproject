@@ -2,35 +2,35 @@
   {
     "First name": "John",
     "Last name": "Smith",
-    "Email address": "js2015@uw.edu",
+    "Email": "js2015@uw.edu",
     "Password":"johnSmith2015"
   },
 
   {
     "First name":"Cee",
     "Last name":"Nguyen",
-    "Email address":"cnguyen0@uw.edu",
+    "Email":"cnguyen0@uw.edu",
     "Password":"ceeNguyen2015"
   },
 
   {
     "First name":"Xiaowen",
     "Last name":"Feng",
-    "Email address":"xfeng1@uw.edu",
+    "Email":"xfeng1@uw.edu",
     "Password":"xiaowenFeng2015"
   },
 
   {
     "First name":"Xingyue",
     "Last name":"Yang",
-    "Email address":"xy42@uw.edu",
+    "Email":"xy42@uw.edu",
     "Password":"xingyueYang2015"
   },
 
   {
     "First name":"Mina",
     "Last name":"Tari",
-    "Email address":"minatari@uw.edu",
+    "Email":"minatari@uw.edu",
     "Password":"minaTari2015"
   }
 ]
