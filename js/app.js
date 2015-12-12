@@ -1,5 +1,5 @@
 
-angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui.router', 'angular-uuid'])
+angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui.router'])
     .constant('productKey', 'cart')
 
     .factory('productsJSON', function($http) {
@@ -15,24 +15,33 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
     //configure views for shop to cart
     .config(function($stateProvider, $urlRouterProvider) { //make sure spelling is exact //declares our various ui-routes and partials, when to show them, etc
         $stateProvider
+            //.state('minaShop', {
+            //    url: '/minashops', //url will appear in html address
+            //    templateUrl: 'shopview.html', //where is the partial html file that defines this view?
+            //    controller: 'MinaShopsController' //which controller do I want to use?
+            //})
+            //.state('minaCart', {
+            //    url: '/minacarts',
+            //    templateUrl: 'cartview.html',
+            //    controller: 'MinaCartsController'
+            //});
             .state('minaShop', {
                 url: '/minashops', //url will appear in html address
-                templateUrl: 'views/shopview.html', //where is the partial html file that defines this view?
+                templateUrl: 'shopview.html', //where is the partial html file that defines this view?
                 controller: 'MinaShopsController' //which controller do I want to use?
             })
             .state('minaCart', {
                 url: '/minacarts',
-                templateUrl: 'views/cartview.html',
+                templateUrl: 'cartview.html',
                 controller: 'MinaCartsController'
             });
 
         $urlRouterProvider.otherwise('/minashops'); //just reset that the address ends in this
     })
 
-    .controller('MinaShopsController', function($scope, contacts) {
+    .controller('MinaShopsController', function($scope) {
     })
-    .controller('MinaCartsController', function($scope, $stateParams, $state,
-                                                uuid, localStorageService, storageKey, contacts) {
+    .controller('MinaCartsController', function($scope) {
     })
 
     .controller('HomeController', function($scope, $http, usersJSON) {
