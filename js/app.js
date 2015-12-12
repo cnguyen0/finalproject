@@ -106,9 +106,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
                 $scope.confirmation = !$scope.confirmation;
 
             });
-
         };
-
     })
 
     .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, product) {
