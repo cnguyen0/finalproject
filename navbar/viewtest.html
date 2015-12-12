@@ -30,6 +30,9 @@
         <!-- ui bootstrap -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.js"></script>
 
+        <!--loadash-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+
         <!-- animate -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
 
@@ -38,14 +41,52 @@
 
     </head>
 
-    <body>
+    <!--<body ng-app="WebApp" ng-controller="ProductsListCtrl">-->
+    <body ng-app="WebApp" ng-controller="ProductsListCtrl">
+
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html" class="active">Blue Stilly</a>
+            </div>
+
+            <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
+                <ul class="nav navbar-nav">
+
+                    <li><a href="aboutus.html">OUR STORY</a></li>
+                    <li><a class="active" href="store.html">STORE</a></li>
+                    <li><a href="news.html">NEWS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../account/signup.html"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
+                    <li><a href="../account/login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+                    <li><a href="../account/cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 
     <main class="container" ng-app="WebApp">
         <div ui-view></div>
     </main>
 
-    <footer class="container">
-        <p>TESTING VIEWS</p>
+    <footer>
+        <hr/>
+        <div class="container">
+            <p>TESTING VIEWS</p>
+            <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+            <p>&copy; 2014 <strong>Blue Stilly</strong> Coffee. All Rights Reserved</p>
+        </div>
     </footer>
 
     </body>

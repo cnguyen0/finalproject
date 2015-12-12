@@ -28,7 +28,8 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
             .state('minaShop', {
                 url: '/minashops', //url will appear in html address
                 templateUrl: 'shopview.html', //where is the partial html file that defines this view?
-                controller: 'MinaShopsController' //which controller do I want to use?
+                controller: 'MinaShopsController'
+                //controller: 'MinaShopsController' //which controller do I want to use?
             })
             .state('minaCart', {
                 url: '/minacarts',
