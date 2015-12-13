@@ -28,6 +28,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
             });
 
         $urlRouterProvider.otherwise('/products');
+
     })
 
     .controller('HomeController', function($scope, $http, usersJSON) {
@@ -47,7 +48,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
         }
     })
 
-    .controller('ProductsListCtrl', function($scope,productsJSON){
+    .controller('ProductsListCtrl', function($scope,productsJSON, cartService){
         'use strict';
 
         productsJSON.then(function (results) {
@@ -60,8 +61,12 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
         });
     })
 
-    .controller('ProductDetailCtrl', function($scope, $filter, $uibModal, $log, productsJSON) {
+    .controller('ProductDetailCtrl', function($scope, $filter, $uibModal, $log, productsJSON, cartService) {
         'use strict';
+
+        //initialize empty cart and empty cart object
+        $scope.cart = [];
+        $scope.cartObject= {};
 
         $scope.closeAlert = function(){
             $scope.confirmation = !$scope.confirmation;
@@ -88,7 +93,6 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
             modalInstance.result.then(function (selectedProduct) {
 
                 $scope.selectedProduct = selectedProduct;
-
                 $scope.confirmation = !$scope.confirmation;
 
             });
@@ -145,7 +149,6 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
             saveData: saveData
         };
     })
-
 
     .controller('CartCtrl', function($scope, cartService, usersJSON) {
         'use strict';
