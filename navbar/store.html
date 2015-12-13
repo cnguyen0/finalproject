@@ -1,162 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blue Stilly</title>
-    <link rel="icon" href="../img/icon.png"/>
+
+    <title>Blue Stilly Coffee</title>
 
     <!--Bootstrap css, using integrity attr to ensure correct content was downloaded -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- link to css -->
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="icon" href="../img/icon.png"/>
+    <!--Open Sans Condensed font for headings-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 
-    <!-- angular.js-->
+    <!--Open Sans normal and light for body text-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <link rel="icon" href="../img/icon.png"/>
+    <!--our stylesheet-->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- angular script file -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 
-    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
+    <!--angular ui-router module-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.js"></script>
+
+    <!-- ui bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
 
     <!--loadash-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 
-    <!--ui routing-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <!-- animate -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
 
-    <!-- link to javascript -->
+    <!-- our script file -->
     <script src="../js/app.js"></script>
 
 </head>
 
-<body ng-app="WebApp" ng-controller="ProductsListCtrl">
-<!--<body ng-app="WebApp" ng-controller="ProductDetailCtrl">-->
+<body ng-app="WebApp">
 
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
 
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container-fluid">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="../index.html" class="active">Blue Stilly</a>
-            </div>
-
-            <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
-               <ul class="nav navbar-nav">
-
-                    <li><a href="aboutus.html">OUR STORY</a></li>
-                    <li><a class="active" href="store.html">STORE</a></li>
-                    <li><a href="news.html">NEWS</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../account/signup.html"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
-                    <li><a href="../account/login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
-                    <li><a href="../account/cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>
-                </ul>
-            </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html" class="active">Blue Stilly</a>
         </div>
-    </nav>
 
-    <main class="container" ng-controller="ProductDetailCtrl">
-        <h3 class="text-center">STORE</h3>
-        <hr/>
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
+            <ul class="nav navbar-nav">
 
+                <li><a href="aboutus.html">OUR STORY</a></li>
+                <li><a class="active" href="store.html">STORE</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
 
-        <div class="row row-eq-height">
-            <div class=" container types">
-                <ul>
-                    <li>
-                        <a href="#types" ng-click = "filters.categories = ''">All</a>
-                    </li>
-                    <li ng-repeat="c in categories |orderBy: c">
-                        <a href="#types" ng-click="filters.categories = c">{{c}}</a>
-                    </li>
-                </ul>
-                <div class="alert alert-success fade in" ng-if="confirmation">
-                    <a href="#" class="close" ng-click = 'closeAlert()'>&times;</a>
-                    <p>{{selectedProduct.quantity}} {{selectedProduct.name}} is added to your cart!</p>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <script type="text/ng-template" id="product-detail.html">
-                    <span id="close-window" ng-click="close()"><i class="fa fa-times"></i></span>
-                    <div class="row modal-body product-detail">
-
-                        <div class="col-sm-5 col-md-5 col-lg-5">
-                            <img class="detail-img" ng-src="{{product.photo}}"/>
-                        </div>
-                        <div class="col-sm-7 col-md-7 col-lg-7">
-                            <h3>{{product.name}}</h3>
-                            <h3>{{product.price | currency}}</h3>
-                            <div>
-                                <div class="selectBox">
-                                    <p>Quantity</p>
-                                    <select ng-model='product.quantity' class="form-control">
-                                        <option selected value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                    </select>
-                                </div>
-                                <div class="selectBox" ng-if='product.grind'>
-                                <p>Grind</p>
-                                    <select class="form-control">
-                                        <option ng-repeat="g in product.grind" value="{{g}}">{{g}}</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button class="btn btn-info" ng-click="submit()"> ADD TO CART</button>
-                                </div>
-                                <div>
-                                    <hr class="product-detail-hr"/>
-                                    <p>PRODUCT INFO</p>
-                                    <p>{{product.description}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </script>
-
-                <div class="col-sm-6 col-md-4 col-lg-3 products-list" ng-repeat = "product in products |filter: filters|orderBy: 'categories'">
-                    <div class="item">
-                    <div class="text-hover">
-                        <img class="product-img" ng-src="{{product.photo}}"/>
-                        <div class="overlay">
-                            <span ng-click="open(product)"><i class="fa fa-eye"></i> QUICK VIEW</span>
-                        </div>
-                    </div>
-
-                    <p class="product-name">{{product.name}}</p>
-                    <p>{{product.price | currency}}</p>
-                </div>
-                </div>
-            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../account/signup.html"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
+                <li><a href="../account/login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+                <li><a ui-sref="cart"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>
+            </ul>
         </div>
-    </main>
+    </div>
+</nav>
 
-    <footer>
-        <hr/>
-        <div class="container">
+<main class="container">
+    <div ui-view></div>
+</main>
+
+<footer>
+    <hr/>
+    <div class="container">
         <p><a href="aboutus.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
-            <p>&copy; 2014 <strong>Blue Stilly</strong> Coffee. All Rights Reserved</p>
-        </div>
-    </footer>
+        <p>&copy; 2014 <strong>Blue Stilly</strong> Coffee. All Rights Reserved</p>
+    </div>
+</footer>
+
 </body>
 </html>

@@ -15,34 +15,19 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
     //configure views for shop to cart
     .config(function($stateProvider, $urlRouterProvider) { //make sure spelling is exact //declares our various ui-routes and partials, when to show them, etc
         $stateProvider
-            //.state('minaShop', {
-            //    url: '/minashops', //url will appear in html address
-            //    templateUrl: 'shopview.html', //where is the partial html file that defines this view?
-            //    controller: 'MinaShopsController' //which controller do I want to use?
-            //})
-            //.state('minaCart', {
-            //    url: '/minacarts',
-            //    templateUrl: 'cartview.html',
-            //    controller: 'MinaCartsController'
-            //});
-            .state('minaShop', {
-                url: '/minashops', //url will appear in html address
-                templateUrl: 'shopview.html', //where is the partial html file that defines this view?
-                controller: 'MinaShopsController'
+            .state('products', {
+                url: '/products', //url will appear in html address
+                templateUrl: '../views/products.html', //where is the partial html file that defines this view?
+                controller: 'ProductsListCtrl'
                 //controller: 'MinaShopsController' //which controller do I want to use?
             })
-            .state('minaCart', {
-                url: '/minacarts',
-                templateUrl: 'cartview.html',
-                controller: 'MinaCartsController'
+            .state('cart', {
+                url: '/cart',
+                templateUrl: '../views/cart.html',
+                controller: 'CartCtrl'
             });
 
-        $urlRouterProvider.otherwise('/minashops'); //just reset that the address ends in this
-    })
-
-    .controller('MinaShopsController', function($scope) {
-    })
-    .controller('MinaCartsController', function($scope) {
+        $urlRouterProvider.otherwise('/products');
     })
 
     .controller('HomeController', function($scope, $http, usersJSON) {
@@ -89,7 +74,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
 
 
             var modalInstance = $uibModal.open({
-                templateUrl:'product-detail.html',
+                templateUrl:'../views/product-detail.html',
                 size:'md',
                 controller: 'ModalInstanceCtrl',
                 resolve: {
@@ -97,19 +82,20 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
                         return $scope.product;
                     }
                 }
+
             });
 
-            modalInstance.result.then(function (selectedProduct, cartService) {
+            modalInstance.result.then(function (selectedProduct) {
 
                 $scope.selectedProduct = selectedProduct;
-                // cartService.addProduct(selectedProduct);
+
                 $scope.confirmation = !$scope.confirmation;
 
             });
         };
     })
 
-    .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, product) {
+    .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, product, cartService) {
         'use strict';
 
         $scope.product = product;
@@ -119,7 +105,10 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
         };
 
         $scope.submit = function() {
+            cartService.addProduct(product);
             $uibModalInstance.close($scope.product);
+
+
         }
 
     })
@@ -128,19 +117,19 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
         var cart = angular.fromJson(localStorage.getItem(productKey)) || {items:[]};
 
         function saveData() {
-            localStorage.setItem(productKey, angular.toJson($scope.cart));
+            return localStorage.setItem(productKey, angular.toJson(cart));
         }
 
         var addProduct = function(product) {
             var qty = 0;
             cart.items.forEach(function (item) {
-                qty += item.quantity;
+                qty += _.parseInt(item.quantity);
             });
             cart.items.push({
                 name: product.name,
                 price: product.price,
-                quantity: product.quantity,
-                //grind: product.grind,
+                quantity: _.parseInt(product.quantity),
+                grind: product.grind,
                 extPrice: product.price * product.quantity
             });
             saveData();
@@ -152,7 +141,8 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
 
         return {
             getCart: getCart,
-            addProduct: addProduct
+            addProduct: addProduct,
+            saveData: saveData
         };
     })
 
@@ -170,7 +160,7 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
         // Remove product from Cart
         $scope.removeProduct = function(index) {
             $scope.cart.items.splice(index, 1);
-            saveData();
+            cartService.saveData();
         };
 
 
