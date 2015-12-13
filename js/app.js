@@ -28,101 +28,22 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
             .state('minaShop', {
                 url: '/minashops', //url will appear in html address
                 templateUrl: 'shopview.html', //where is the partial html file that defines this view?
-                controller: 'MinaShopsController'
+                controller: 'ProductDetailCtrl'
                 //controller: 'MinaShopsController' //which controller do I want to use?
             })
             .state('minaCart', {
                 url: '/minacarts',
                 templateUrl: 'cartview.html',
-                controller: 'MinaCartsController'
+                controller: 'CartCtrl'
             });
 
         $urlRouterProvider.otherwise('/minashops'); //just reset that the address ends in this
     })
 
-    .controller('MinaShopsController', function($scope) {
-    })
-    .controller('MinaCartsController', function($scope) {
-    })
-
-    .controller('HomeController', function($scope, $http, usersJSON) {
-        'use strict';
-
-        if (window.innerWidth > 768) {
-            $scope.visible = false;
-
-            $scope.toggle = function() {
-                $scope.visible = !$scope.visible;
-                document.getElementById('enter').style.display = 'none';
-            }
-
-        } else {
-            document.getElementById('enter').style.display = 'none';
-            $scope.visible = true;
-        }
-    })
-
-    .controller('ProductsListCtrl', function($scope,productsJSON){
-        'use strict';
-
-        productsJSON.then(function (results) {
-            $scope.products = results.data;
-
-
-            $scope.categories = _.uniq(_.flatten(_.pluck($scope.products, 'categories')));
-
-            $scope.filters = {};
-        });
-    })
-
-    .controller('ProductDetailCtrl', function($scope, $filter, $uibModal, $log, productsJSON) {
-        'use strict';
-
-        $scope.closeAlert = function(){
-            $scope.confirmation = !$scope.confirmation;
-
-        };
-        $scope.open = function(product) {
-            $scope.confirmation = false;
-
-            $scope.product = product;
-
-
-            var modalInstance = $uibModal.open({
-                templateUrl:'product-detail.html',
-                size:'md',
-                controller: 'ModalInstanceCtrl',
-                resolve: {
-                    product: function() {
-                        return $scope.product;
-                    }
-                }
-            });
-
-            modalInstance.result.then(function (selectedProduct, cartService) {
-
-                $scope.selectedProduct = selectedProduct;
-                // cartService.addProduct(selectedProduct);
-                $scope.confirmation = !$scope.confirmation;
-
-            });
-        };
-    })
-
-    .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, product) {
-        'use strict';
-
-        $scope.product = product;
-        $scope.product.quantity = '1';
-        $scope.close = function () {
-            $uibModalInstance.dismiss('cancel');
-        };
-
-        $scope.submit = function() {
-            $uibModalInstance.close($scope.product);
-        }
-
-    })
+    //.controller('MinaShopsController', function($scope) {
+    //})
+    //.controller('MinaCartsController', function($scope) {
+    //})
 
     .service('cartService', function(productKey) {
         var cart = angular.fromJson(localStorage.getItem(productKey)) || {items:[]};
@@ -154,6 +75,90 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
             getCart: getCart,
             addProduct: addProduct
         };
+    })
+
+    .controller('HomeController', function($scope, $http, usersJSON) {
+        'use strict';
+
+        if (window.innerWidth > 768) {
+            $scope.visible = false;
+
+            $scope.toggle = function() {
+                $scope.visible = !$scope.visible;
+                document.getElementById('enter').style.display = 'none';
+            }
+
+        } else {
+            document.getElementById('enter').style.display = 'none';
+            $scope.visible = true;
+        }
+    })
+
+    .controller('ProductsListCtrl', function($scope,productsJSON, cartService){
+        'use strict';
+
+        productsJSON.then(function (results) {
+            $scope.products = results.data;
+
+
+            $scope.categories = _.uniq(_.flatten(_.pluck($scope.products, 'categories')));
+
+            $scope.filters = {};
+        });
+    })
+
+    .controller('ProductDetailCtrl', function($scope, $filter, $uibModal, $log, productsJSON, cartService) {
+        'use strict';
+
+        //initialize empty cart and empty cart object
+        $scope.cart = [];
+        $scope.cartObject= {};
+
+        $scope.closeAlert = function(){
+            $scope.confirmation = !$scope.confirmation;
+
+        };
+        $scope.open = function(product) {
+            $scope.confirmation = false;
+
+            $scope.product = product;
+
+
+            var modalInstance = $uibModal.open({
+                templateUrl:'product-detail.html',
+                size:'md',
+                controller: 'ModalInstanceCtrl',
+                resolve: {
+                    product: function() {
+                        return $scope.product;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedProduct, cartService) {
+
+                $scope.selectedProduct = selectedProduct;
+                cartService.addProduct(selectedProduct);
+                //console.log(cartService);
+                $scope.confirmation = !$scope.confirmation;
+
+            });
+        };
+    })
+
+    .controller('ModalInstanceCtrl', function($scope, $uibModalInstance, product, cartService) {
+        'use strict';
+
+        $scope.product = product;
+        $scope.product.quantity = '1';
+        $scope.close = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+
+        $scope.submit = function() {
+            $uibModalInstance.close($scope.product);
+        }
+
     })
 
 

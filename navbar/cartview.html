@@ -66,46 +66,50 @@
     <hr/>
 </div>
 
-<main class="container-fluid">
+<main class="container-fluid" ng-app="WebApp" ng-controller="ProductDetailCtrl">
     <div class="row" id="order">
         <div class="col-md-6 col-md-offset-3">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Lb</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Ext. Price</th>
-                </tr>
-                </thead>
-                <tbody>
-                <!-- <tr ng-repeat="item in cart.items">
-                    <td class="btn btn-default" ng-click="removeProduct($index)"> -->
-                <tr>
-                    <td class="btn btn-default"><a href="#">
-                        <i class="fa fa-minus"></i></a></td>
-                    <!--
-                        <td>{{item.name}}</td>
-                        <td>{{item.quantity}}</td>
-                        <td>{{item.price | currency}}</td>
-                        <td>{{item.price * item.quantity | currency}}</td> -->
+            <p ng-repeat="c in cart">
+              {{c}}
+            </p>
 
-                    <td>2</td>
-                    <td>Ethiopian Harrar</td>
-                    <td>$15</td>
-                    <td>$30</td>
-                </tr>
-                <tr>
-                    <td class="btn btn-default"><a href="">
-                        <i class="fa fa-minus"></i></a></td>
-                    <td>5</td>
-                    <td>Honduran</td>
-                    <td>$15</td>
-                    <td>$75</td>
-                </tr>
-                </tbody>
-            </table>
+            <!--<table class="table">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th></th>-->
+                    <!--<th>Lb</th>-->
+                    <!--<th>Name</th>-->
+                    <!--<th>Price</th>-->
+                    <!--<th>Ext. Price</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--&lt;!&ndash; <tr ng-repeat="item in cart.items">-->
+                    <!--<td class="btn btn-default" ng-click="removeProduct($index)"> &ndash;&gt;-->
+                <!--<tr>-->
+                    <!--<td class="btn btn-default"><a href="#">-->
+                        <!--<i class="fa fa-minus"></i></a></td>-->
+                    <!--&lt;!&ndash;-->
+                        <!--<td>{{item.name}}</td>-->
+                        <!--<td>{{item.quantity}}</td>-->
+                        <!--<td>{{item.price | currency}}</td>-->
+                        <!--<td>{{item.price * item.quantity | currency}}</td> &ndash;&gt;-->
+
+                    <!--<td>2</td>-->
+                    <!--<td>Ethiopian Harrar</td>-->
+                    <!--<td>$15</td>-->
+                    <!--<td>$30</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="btn btn-default"><a href="">-->
+                        <!--<i class="fa fa-minus"></i></a></td>-->
+                    <!--<td>5</td>-->
+                    <!--<td>Honduran</td>-->
+                    <!--<td>$15</td>-->
+                    <!--<td>$75</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
             <h4>Grand Total: $105</h4>
             <p>Cart View Test</p>
             <a class="btn btn-primary" button type='submit' ui-sref="minaShop">Shop</a>
