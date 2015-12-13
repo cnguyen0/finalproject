@@ -1,0 +1,38 @@
+<main class="container" ng-controller="ProductDetailCtrl">
+    <h3 class="text-center">STORE</h3>
+    <hr/>
+    <div class="row row-eq-height">
+        <div class=" container types">
+            <ul>
+                <li>
+                    <a href="#types" ng-click = "filters.categories = ''">All</a>
+                </li>
+                <li ng-repeat="c in categories |orderBy: c">
+                    <a href="#types" ng-click="filters.categories = c">{{c}}</a>
+                </li>
+            </ul>
+            <div class="alert alert-success fade in" ng-if="confirmation">
+                <a href="#" class="close" ng-click = 'closeAlert()'>&times;</a>
+                <p><a ui-sref ="cart">{{selectedProduct.quantity}} {{selectedProduct.name}} has been added to your cart!</a></p>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div ui-view></div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 products-list" ng-repeat = "product in products |filter: filters|orderBy: 'categories'">
+                <div class="item">
+                    <div class="text-hover">
+                        <img class="product-img" ng-src="{{product.photo}}"/>
+                        <div class="overlay">
+                            <span ng-click="open(product)"><i class="fa fa-eye"></i> QUICK VIEW</span>
+                        </div>
+                    </div>
+
+                    <p class="product-name">{{product.name}}</p>
+                    <p>{{product.price | currency}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

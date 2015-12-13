@@ -1,0 +1,42 @@
+<div class="container top"></div>
+<div>
+    <h3 class="text-center">CART</h3>
+    <hr/>
+</div>
+
+<main class="container-fluid">
+    <div class="row" id="order">
+        <div class="col-md-6 col-md-offset-3">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Lb</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Ext. Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in cart.items">
+                    <td class="btn btn-default" ng-click="removeProduct($index)"><a>
+                        <i class="fa fa-minus"></i></a></td>
+
+
+                    <td>{{item.name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.price | currency}}</td>
+                    <td>{{item.price * item.quantity | currency}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <h4>Grand Total: {{getCartTotal() | currency}}</h4>
+            <div class="container col-md-offset-7">
+                <a type="button" ui-sref="products" class="btn btn-default">Cancel</a>
+
+                <button  class="btn btn-primary">Check Out</button>
+            </div>
+
+        </div>
+    </div>
+</main>

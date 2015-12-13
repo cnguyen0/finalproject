@@ -1,0 +1,42 @@
+<span id="close-window" ng-click="close()"><i class="fa fa-times"></i></span>
+    <div class="row modal-body product-detail">
+
+        <div class="col-sm-5 col-md-5 col-lg-5">
+            <img class="detail-img" ng-src="{{product.photo}}"/>
+        </div>
+        <div class="col-sm-7 col-md-7 col-lg-7">
+            <h3>{{product.name}}</h3>
+            <h3>{{product.price | currency}}</h3>
+            <div>
+                <div class="selectBox">
+                    <p>Quantity</p>
+                    <select ng-model='product.quantity' class="form-control">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="selectBox" ng-if='product.grind'>
+                    <p>Grind</p>
+                    <select class="form-control">
+                        <option ng-repeat="g in product.grind" value="{{g}}">{{g}}</option>
+                    </select>
+                </div>
+                <div>
+                    <a button href="#" class="btn btn-info" ng-click="submit()"> ADD TO CART</a>
+                </div>
+                <div>
+                    <hr class="product-detail-hr"/>
+                    <p>PRODUCT INFO</p>
+                    <p>{{product.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
