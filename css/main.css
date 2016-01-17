@@ -11,15 +11,15 @@ body {
 }
 
 .main {
-    background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/small_background.jpg);
     background-size: cover;
     width: 100%;
     max-height: 1000px;
 }
 
 body h1 {
-    font-size: 50px;
+    font-size: 20px;
 }
+
 body {
     padding-top: 0;
 }
@@ -170,7 +170,7 @@ li a:hover {
 
 
 .product-detail-hr {
-    width: 100%;
+    width: 75%;
 }
 .product-detail .form-control {
     width: auto;
@@ -276,38 +276,11 @@ footer a:hover,a:focus {
     color: #01a1dd;
 }
 
-.enterText {
+.enterText h1 {
+    font-family: Pacifico, Helvetica, Arial, serif;
     text-align: center;
-    padding-top: 3em;
-    color: white;
-}
-
-.enterText h1{
-    font-size: 30px;
-}
-
-.enterText li {
-    list-style-type: none;
-    font-weight: 300;
-}
-
-.enterText ul {
-    padding: 0;
-}
-
-.enterText a {
-    text-decoration: none;
-    color: white;
-}
-
-#enter:hover, #enter:focus {
-    cursor: pointer;
-}
-
-#question {
-    font-size: 22px;
-    font-weight: 300;
-
+    color: black;
+    font-size: 50px;
 }
 
 /*larger screens*/
@@ -318,7 +291,7 @@ footer a:hover,a:focus {
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
-        height: 400px;
+        max-height: 400px;
     }
 
 	.top h1 {
@@ -344,6 +317,7 @@ footer a:hover,a:focus {
 
     .main {
         background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.8)), url(../img/coffee-main.png);
+        height: 400px;
     }
 
     .main h1 {
@@ -358,28 +332,8 @@ footer a:hover,a:focus {
         color: black;
         text-shadow: 2px 2px #FFF ;
         text-align: center;
-        padding-top: 2em;
+        padding-top: 1.5em;
         font-size: 50px;
-    }
-
-    .enterText{
-        color: black;
-    }
-    .enterText p {
-        padding-bottom: 1em;
-    }
-
-    .enterText li {
-        list-style-type: none;
-        display: inline;
-        margin-right: 1em;
-    }
-
-    .enterText a {
-        text-decoration: none;
-        color: black;
-        font-size: 20px;
-        font-weight: 400;
     }
 
     #enter {
