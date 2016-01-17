@@ -15,7 +15,7 @@
 
     <!-- angular script file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js.map"></script> -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.js"></script>
@@ -34,24 +34,22 @@
 </head>
 
 
-<body ng-app="WebApp">
+<body>
     <!-- WHEN MEDIA MIN-WIDTH > 768PX -->
 
-    <div ng-controller="HomeController">
+    <div>
         <div class="main">
             <div class="enterText container">
-                <h1 ng-if="visible">Welcome to<br />Blue Stilly Coffee!</h1>
+                <h1>Welcome to<br />Blue Stilly Coffee!</h1>
             </div>
 
-            <h3 id="enter" ng-click="toggle()"><br />ENTER<i class="fa fa-arrow-circle-right"></i></h3>
-
-            <div class="enterText" ng-if="visible">
+            <div class="enterText">
                 <p id="question">What would you like to do?</p>
                 <ul>
                     <li><a href="navbar/store.html">SHOP</a></li>
                     <li><a href="navbar/aboutus.html">OUR STORY</a></li>
                     <li><a href="navbar/contact.html">CONTACT US</a></li>
-                    <li><a href="account/signup.html">SIGN UP</a> | <a href="account/login.html">LOGIN</a></li>
+                    <li><a href="account/signup.html">SIGN UP </a><a href="account/login.html">LOGIN</a></li>
                 </ul>
             </div>
         </div>

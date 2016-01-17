@@ -31,23 +31,6 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
 
     })
 
-    .controller('HomeController', function($scope, $http, usersJSON) {
-        'use strict';
-
-        if (window.innerWidth > 768) {
-            $scope.visible = false;
-
-            $scope.toggle = function() {
-                $scope.visible = !$scope.visible;
-                document.getElementById('enter').style.display = 'none';
-            }
-
-        } else {
-            document.getElementById('enter').style.display = 'none';
-            $scope.visible = true;
-        }
-    })
-
     .controller('ProductsListCtrl', function($scope,productsJSON, cartService){
         'use strict';
 
