@@ -188,6 +188,13 @@ angular.module('WebApp', ['ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui
 
     })
 
+    //makes alert show up when someone submits a contact us request
+    .controller('ContactCtrl', function($scope) {
+        $scope.test = function() {
+            alert("Your message has been sent. Thank you!");
+        }
+    })
+
     .directive('existUser', function() {
         return {
             require: 'ngModel',
