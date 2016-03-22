@@ -1,24 +1,42 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald);
-@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300italic);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 
 body {
 	font-family: "Fira Sans", Helvetica, Arial, serif;
-    font-size: 18px;
+    font-size: 15px;
+    padding-top: 60px;
+    font-weight: 300;
+}
+
+.main {
+    background-size: cover;
+    width: 100%;
+    max-height: 1000px;
 }
 
 body h1 {
-    font-size: 50px;
+    font-size: 20px;
 }
 
-.top, .navbar {
-	font-family: Oswald, Helvetica, Arial, serif;
-	margin-bottom: 0;
+body {
+    padding-top: 0;
 }
 
-.navbar {
-    background-color: transparent;
-    border-radius: none;
-    border: 0;
+
+
+h4 {
+    color:#01a1dd;
+    text-align: right;
+    padding-right: 10px;
+}
+.product-detail h3 {
+    margin-top: 0em;
+}
+
+tbody {
+    padding: 2em;
 }
 
 #headlogo {
@@ -26,92 +44,184 @@ body h1 {
 	margin-right: 1em;
 }
 
-li {
-	font-size: 15px;
-}
-
-li:hover {
+li a:hover {
 	color: #01a1dd;
 }
 
-.sub-menu {
-    display: none;
-    list-style-type: none;
-}
-
-.sub-menu a {
-	text-decoration: none;
-	text-align: left;
+.navbar {
+    font-size: 15px;
+    margin-bottom: 0;
 }
 
 #storeh1 {
     font-family: cursive;
 }
 
-/* Selectors below this and above media is for making the navbar NOT collapse
-    when screen is small */
-.navbar-collapse.collapse {
-    display: block!important;
+.navbar-default {
+    background-color: #FFF;
+    border-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #01a1dd;
+}
+.navbar-default .navbar-toggle {
+    border-color: #01a1dd;
 }
 
-.navbar-nav>li, .navbar-nav {
-    float: left !important;
+.navbar-default .navbar-brand {
+    color: #000;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #01a1dd;
 }
 
-.navbar-nav.navbar-right:last-child {
-    margin-right: -15px !important;
-}
-
-.navbar-right {
-    float: right!important;
+.btn-primary {
+    background-color: #01a1dd;
 }
 
 .product {
     list-style-type: none;
+
 }
 
-#types{
+.types{
     list-style-type: none;
     display: inline;
-    padding-left: 1.5em;
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding-bottom: 2em;
+    font-size: 16px;
+    text-align: center;
 
 }
-#types li{
+
+.types ul {
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.types a {
+    text-decoration: none;
+    color: #777;
+}
+
+.types li {
     display: inline;
-}
-#types a {
-    text-decoration: none;
+    padding-right: 0.2em;
+
 }
 
-footer {
-    font-size: 18px;
-    color: white;
-    background-color: #01a1dd;
-    padding: 1em;
+.products-list {
+    font-size: 14px;
+    margin-bottom: 2em;
 }
 
-footer a {
-    text-decoration: none;
-    color: white;
+.products-list .item {
+    text-align: center;
 }
 
-#slides_control > div {
-    height: 200px;
+.product-name {
+    color: #01a1dd;
+    font-size: 16px;
+    margin-bottom: 0;
 }
 
-img {
-    margin:auto;
-    width: 400px;
+.text-hover {
+    width: 100%;
+    display: block;
+    position: relative;
 }
 
-#slides_control {
+.text-hover .overlay {
     position:absolute;
-    width: 400px;
-    left:50%;
-    top:20px;
-    margin-left:-200px;
+    top:80%;
+    width:100%;
+    height:20%;
+    background-color:rgba(255,255,255,.75);
+    display:none;
+    text-align: center;
+}
+
+.text-hover:hover .overlay {
+    display:block;
+    cursor:pointer;
+}
+
+.detail-img {
+    float:left;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin-right: 1em;
+}
+.product-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+}
+.product-detail {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 1em;
+}
+
+
+.product-detail-hr {
+    width: 75%;
+}
+.product-detail .form-control {
+    width: auto;
+    margin-bottom: 1em;
+}
+
+#table td, #table th {
+    padding-bottom: 0.3em;
+}
+
+#close-window {
+    float:right;
+    cursor:pointer;
+    margin-right: 0.5em;
+    margin-top: 0.2em;
+    font-weight: 300;
+    font-size: 14px;
+
+}
+
+.img-aboutus {
+    width: 100%;
+    height: auto;
+    margin-top: 2em;
+}
+
+pre {
+    border: none;
+    background-color: white;
+    font-family: inherit;
+}
+
+.aboutus h3 {
+    color: #01a1dd;
+}
+
+#about1pic {
+    padding-top: 1em;
+}
+
+#aboutSpacer {
+    padding: 2em;
+}
+
+.row {
+    width: 100%;
+}
+
+#close-window:hover {
+    color: #01a1dd;
 }
 
 .validation-error {
@@ -127,20 +237,66 @@ form .ng-dirty.ng-valid {
     border: 1px solid #00DD00;
 }
 
+.formLabel {
+    font-size: 14px;
+    color: #777;
+}
+hr {
+    border-color: #01a1dd;
+    width: 4em;
+}
+
+.subtitle {
+    padding-bottom: 2em;
+    font-size: 16px;
+    color: #777;
+    text-align: center;
+}
+
+
+footer {
+    font-size: 15px;
+    color: #777;
+    padding: 0.5em;
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+}
+
+footer hr{
+    border-color: #01a1dd;
+    width: 100%;
+}
+
+
+footer a {
+    text-decoration: none;
+    color: #777;
+}
+footer a:hover,a:focus {
+    text-decoration: none;
+    color: #01a1dd;
+}
+
+.enterText h1 {
+    font-family: Pacifico, Helvetica, Arial, serif;
+    text-align: center;
+    color: black;
+    font-size: 50px;
+}
+
 
 /*larger screens*/
 @media (min-width: 768px) {
-    body {
-        font-size: 20px;
-    }
-
     .top {
         margin-bottom: 1em;
-        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.35)), url(../img/backgroundsmall.jpg);
+
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.2)), url(../img/blue-sm.jpg);
+
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
-        height: 400px;
+        max-height: 400px;
     }
 
 	.top h1 {
@@ -149,26 +305,95 @@ form .ng-dirty.ng-valid {
         text-align: right;
         color: white;
 	}
-
-    li {
-        font-size: 20px;
+    .navbar-right li a {
+        font-size: 13px;
     }
 
-    li:hover {
-        color: #01a1dd;
-        font-size: 25px;
+    .types li {
+        display: inline;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
 
-    li:hover > .sub-menu {
-        display:block;
+    .types {
+        padding-left: 2em;
+        padding-top: 2em;
     }
 
-    #storeh1, #storep {
+    .main {
+        background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.8)), url(../img/coffee-main.png);
+        height: 400px;
+    }
+
+    .main h1 {
+        font-family: Pacifico, Helvetica, Arial, serif;
+        font-size: 100px;
+        margin: 0;
         text-align: center;
+        padding-top: 0.5em;
     }
 
-    #storeh1 {
-        font-size: 120px;
+    .enterText h1 {
+        color: black;
+        text-shadow: 2px 2px #FFF ;
+        text-align: center;
+        padding-top: 1.5em;
+        font-size: 50px;
+    }
+
+    #enter {
+        text-align: center;
+        padding: 5em;
+        font-size: 50px;
+
+    }
+
+    .detail-img {
+        margin-right: 0;
+    }
+
+    .ng-enter {
+        -webkit-transition: 1s linear all; /* Chrome */
+        transition: 1s linear all;
+        opacity: 0;
+    }
+
+    .ng-leave {
+        -webkit-transition: 1s linear all; /* Chrome */
+        transition: 1s linear all;
+        opacity: 1;
+    }
+
+    .ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+     
+    .ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+}
+
+@media(min-width: 992px) {
+    .top {
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.2)), url(../img/blue-md.jpg);
+    }
+    .navbar li {
+        padding-right: 1em;
+    }
+}
+
+@media(min-width: 1200px) {
+    .top {
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.2)), url(../img/blue-lg.jpg);
+    }
+
+    .navbar li {
+        padding-right: 1.5em;
+    }
+
+    .enterText h1 {
+        font-size: 5em;
     }
 }
 

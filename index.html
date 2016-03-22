@@ -11,95 +11,144 @@
     <!-- link to css -->
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- angular script file -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<link rel="icon" href="img/icon.png"/>
 
-    <!-- ui bootstrap -->
+    <!-- angular script file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.js"></script>
+
+	<!--angular ui-router module-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     
     <!-- link to javascript -->
     <script src="js/app.js"></script>
 </head>
+
+
 <body ng-app="WebApp">
-	<div class="container top">
-		<h1>Blue Stilly Coffee</h1>
-	</div>
+    <div>
+        <div class="main">
 
-	<nav class="navbar navbar-default" ng-controller="NavController">
-		<div class="container">
-			<div>
-				<ul class="nav navbar-nav">
-					<li><a href="index.html">Home</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" href="navbar/aboutus.html">About Us</a>
-						<ul class="sub-menu">
-							<li><a href="navbar/aboutus.html#about">About Us</a></li>
-							<li><a href="navbar/aboutus.html#practices">Practices</a></li>
-						</ul>
-					</li>
+         <!-- NAVBAR -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html" class="active">Blue Stilly</a>
+                    </div>
+                    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#aboutus">OUR STORY</a></li>
+                            <li><a href="navbar/store.html">STORE</a></li>
+                            <li><a href="navbar/news.html">NEWS</a></li>
+                            <li><a href="navbar/contact.html">CONTACT US</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="account/signup.html"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
+                            <li><a href="account/login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- END OF NAVBAR -->
 
-					<li class="dropdown">
-						<a class="dropdown-toggle"
-						   href="navbar/store.html">Store</a>
-						<ul class="sub-menu">
-							<li><a href="navbar/store.html">Coffee</a></li>
-							<li><a href="navbar/store.html">Tea</a></li>
-							<li><a href="navbar/store.html">Accessories</a></li>
-						</ul>
-					</li>
-
-					<li><a href="navbar/faq.html">FAQ</a></li>
-					<li><a href="navbar/news.html">News and Events</a></li>
-					<li><a href="navbar/contact.html">Contact Us</a></li>
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="account/signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="account/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					<li><a href="account/cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<div class="container">
-		<h1 class="test">
-			Welcome to Blue Stilly Coffee!
-		</h1>
-        <h2>Who Are We?</h2>
-        <p>
-            One day, because of our love for coffee,we decided to learn as much as we could. We had already tried many different varieties and ordered from many roasters. We decided to visit some of the local roasters and discovered we loved the drum roasted coffee over the 'air' roasted. Drum roasted had more depth and flavor. We began to mail order coffee in bulk from our favorite roaster for ourselves, friends and family. It was time to strike out on our own. We purchased a Diedrich drum style roaster. It was a small-batch coffee shop model in brass, metallic green and black. After training with the old owner of the roaster, we incorporated and started business. Next we attended a training program at the Diedrich factory to hone our skills. It has worked out well for us, as we are HUGE consumers ourselves! We will generally roast your selection medium/dark, however, feel free to request your personal preference when you order!
-        </p>
-        <p>
-            Roasted to order, and shipped FRESH to your door in a couple of days. We sell via the internet as well as by referral from our very satisfied customers!
-        </p>
-        <p>
-            So please, if you love our coffee, please tell everyone. If you don’t, please tell us!
-        </p>
-        <p>
-            Thank you,
-        </p>
-        <p>
-            Rick and Sue
-        </p>
-
-        <div class="container" ng-app="SlideController">
-			<div>
-				<carousel interval="myInterval">
-					<slide ng-repeat="slide in slides" active="slide.active">
-						<img ng-src="{{slide.image}}">
-						<div class="carousel-caption">
-							<h4>Slide {{$index+1}}</h4>
-						</div>
-					</slide>
-				</carousel>
-			</div>
+            <div class="enterText container">
+                <h1>Welcome to<br />Blue Stilly Coffee!</h1>
+            </div>
         </div>
-	</div>
-	<footer>
-		<div class="container">
-		<p><a href="navbar/aboutus.html">About Us</a> | <a href="navbar/contact.html">Contact Us</a> | Copyrighted 2014 Blue Stilly Coffee. All Rights Reserved</p>
-		</div>
-	</footer>
+    </div>
+
+<!-- testing -->
+    <div class="aboutus" id="aboutus">
+    <div class="container" id="about">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-aboutus" id="about1pic" src="img/aboutme31.jpg" alt=""/>
+            </div>
+                <div class="col-md-8">
+                    <h2>Who Are We?</h2>
+
+                    <p>
+                        One day, because of our love for coffee,we decided to learn as much as we could. We had already tried many different varieties and ordered from many roasters. We decided to visit some of the local roasters and discovered we loved the drum roasted coffee over the 'air' roasted. Drum roasted had more depth and flavor. We began to mail order coffee in bulk from our favorite roaster for ourselves, friends and family. It was time to strike out on our own. We purchased a Diedrich drum style roaster. It was a small-batch coffee shop model in brass, metallic green and black. After training with the old owner of the roaster, we incorporated and started business. Next we attended a training program at the Diedrich factory to hone our skills. It has worked out well for us, as we are HUGE consumers ourselves! We will generally roast your selection medium/dark, however, feel free to request your personal preference when you order!
+                    </p>
+                    <p>
+                        Roasted to order, and shipped FRESH to your door in a couple of days. We sell via the internet as well as by referral from our very satisfied customers!
+                    </p>
+                    <p>
+                        So please, if you love our coffee, please tell Everyone. If you don’t, please tell us!
+                    </p>
+                    <p>
+                        Rick and Sue
+                    </p>
+                </div>
+        </div>
+    </div>
+
+    <hr class="product-detail-hr"/>
+
+    <div class="container" id="practices">
+        <div class="row">
+            <div class="col-md-4 col-md-push-8">
+                <img class="img-aboutus" src="img/aboutme22.jpg" alt=""/>
+            </div>
+            <div class="col-md-8 col-md-pull-4" id="aboutSpacer">
+                <h2>Organic and Fair Trade</h2>
+                <h3>Understanding Fair Trade Organic and Shade Grown Coffees</h3>
+
+                <p>
+                    We often read and hear about Organic, Shade Grown and Fair Trade Coffees.
+                    These terms are often used cohesively as a singular term when in fact they are separate and distinct.
+                    To better understand these differences we should visit each individually. First one should understand Fair Trade.
+                    While understanding Fair Trade is somewhat difficult. Although the thought of Fair Trade is not new, it has become more prominent within the past decade.
+                    Established guidelines for these practices exist and several organizations worldwide certify both companies and products. T
+                    he focus is to promote better economic standards and working conditions in developing countries. Advocates of Fair Trade promote a market based approach.
+                    This approach helps Organic Coffeeproducers who are normally small farmers or co-ops to receive higher pricing on their exports that cover costs of sustainable production.
+                    These practices allow for the Fair Trade Premium to be invested in social, economic and environmental development.
+                    This in turn enhances the lives of the workers and their families. Also included in the practice of Fair Trade pricing is the development of long-term trading partnerships which gives the
+                    small farmers greater control over their trading process. There is an abundance of information available on this subject and the organizations involved and you are
+                    encouraged to investigate their contributions.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-aboutus" src="img/aboutme11.jpg" alt=""/>
+            </div>
+            <div class="col-md-8">
+                <h3>Organic Coffee</h3>
+                <p>
+                    Organic coffees are grown and produced without the application of chemical fertilizers, pesticides and herbicides.
+                    Certified Organic can extend to include practices of composting recycling and protection of the environment.
+                    The use of organic practices may reduce the yield of the crop, but adds to the sustainability of future crops.
+                    Organic coffees are generally shade grown, helping to protect forest lands which in turn help nurture the soils with falling leaves and increased bird populations.
+                    There are three main requirements to be certified organic by US standards. These include crops grown on land free of pesticides and other banned substances for a
+                    period of three years. A significant space between the organic and traditional crops is required. Crop rotation is also required to prevent erosion, depletion of
+                    soil and control of pests. Organic certifications may not be economically available to all small farmers and co-ops.
+                    While these certifications may be out of reach, the farmers may in fact be farming organically as they have traditionally done for generations.
+                    Now there is a move to growing coffee shrubs under a canopy of diverse tree and native plant species. This practice encourages many bird species to flourish and helps to sustain the soil nutrients as well as providing natural pest control. There are two main certifications offered for shade grown coffees. The first is the Smithsonian Migratory Bird Center (SMBC) and the Rainforest Alliance. Both have developed sustainable product certifications. The main guidelines include less water pollution, less soil erosion, reduced threats to human health and wildlife habitat, as well as farm management and improved worker conditions and profitability for farmers.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <footer>
+        <hr/>
+        <div class="container">
+            <p><a href="#aboutus">About Us</a> | <a href="navbar/contact.html">Contact Us</a></p>
+            <p>&copy; 2014 <strong>Blue Stilly</strong> Coffee. All Rights Reserved</p>
+        </div>
+    </footer>
+<!-- end of testing -->
+
 </body>
 </html>

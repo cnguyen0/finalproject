@@ -1,0 +1,132 @@
+<!--<body ng-app="WebApp">-->
+
+<!--<nav class="navbar navbar-default navbar-static-top" role="navigation">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="navbar-header">-->
+            <!--<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <!--<a class="navbar-brand" href="../index.html" class="active">Blue Stilly</a>-->
+        <!--</div>-->
+        <!--<div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">-->
+            <!--<ul class="nav navbar-nav">-->
+                <!--<li><a href="../navbar/aboutus.html">OUR STORY</a></li>-->
+                <!--<li><a href="../navbar/store.html">STORE</a></li>-->
+                <!--<li><a href="../navbar/news.html">NEWS</a></li>-->
+                <!--<li><a href="../navbar/contact.html">CONTACT US</a></li>-->
+            <!--</ul>-->
+            <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--<li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>-->
+                <!--<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>-->
+                <!--<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+
+<!--<nav class="navbar navbar-default navbar-static-top" role="navigation">-->
+    <!--<div class="container-fluid">-->
+
+        <!--<div class="navbar-header">-->
+            <!--<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <!--<a class="navbar-brand" href="../index.html" class="active">Blue Stilly</a>-->
+        <!--</div>-->
+
+        <!--<div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true">-->
+            <!--<ul class="nav navbar-nav">-->
+
+                <!--<li><a href="aboutus.html">OUR STORY</a></li>-->
+                <!--<li><a class="active" href="store.html">STORE</a></li>-->
+                <!--<li><a href="news.html">NEWS</a></li>-->
+                <!--<li><a href="contact.html">CONTACT US</a></li>-->
+            <!--</ul>-->
+
+            <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--<li><a href="../account/signup.html"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>-->
+                <!--<li><a href="../account/login.html"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>-->
+                <!--<li><a href="../account/cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+
+<div class="container top">
+
+</div>
+<div>
+    <h3 class="text-center">CART</h3>
+    <hr/>
+</div>
+
+<main class="container-fluid" ng-app="WebApp" ng-controller="ProductDetailCtrl">
+    <div class="row" id="order">
+        <div class="col-md-6 col-md-offset-3">
+            <p ng-repeat="c in cart">
+              {{c}}
+            </p>
+
+            <!--<table class="table">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th></th>-->
+                    <!--<th>Lb</th>-->
+                    <!--<th>Name</th>-->
+                    <!--<th>Price</th>-->
+                    <!--<th>Ext. Price</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--&lt;!&ndash; <tr ng-repeat="item in cart.items">-->
+                    <!--<td class="btn btn-default" ng-click="removeProduct($index)"> &ndash;&gt;-->
+                <!--<tr>-->
+                    <!--<td class="btn btn-default"><a href="#">-->
+                        <!--<i class="fa fa-minus"></i></a></td>-->
+                    <!--&lt;!&ndash;-->
+                        <!--<td>{{item.name}}</td>-->
+                        <!--<td>{{item.quantity}}</td>-->
+                        <!--<td>{{item.price | currency}}</td>-->
+                        <!--<td>{{item.price * item.quantity | currency}}</td> &ndash;&gt;-->
+
+                    <!--<td>2</td>-->
+                    <!--<td>Ethiopian Harrar</td>-->
+                    <!--<td>$15</td>-->
+                    <!--<td>$30</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="btn btn-default"><a href="">-->
+                        <!--<i class="fa fa-minus"></i></a></td>-->
+                    <!--<td>5</td>-->
+                    <!--<td>Honduran</td>-->
+                    <!--<td>$15</td>-->
+                    <!--<td>$75</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+            <h4>Grand Total: $105</h4>
+            <p>Cart View Test</p>
+            <a class="btn btn-primary" button type='submit' ui-sref="minaShop">Shop</a>
+            <a  class="btn btn-primary col-md-3 col-md-offset-9">Check Out</a>
+            <!--
+           <h3>Grand Total: {{getCartTotal() | currency}}</h3>
+           -->
+
+        </div>
+    </div>
+</main>
+
+<!--</body>-->
+
+<!--<body>-->
+   <!--<div class="container" ng-app="WebApp">-->
+       <!--<p>Cart View Test</p>-->
+       <!--<a class="btn btn-primary" button type='submit' ui-sref="minaShop">Shop</a>-->
+   <!--</div>-->
+<!--</body>-->
